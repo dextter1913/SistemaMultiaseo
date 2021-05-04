@@ -1,6 +1,6 @@
-DROP DATABASE if EXISTS atlazdb;
-CREATE DATABASE atlazdb;
-USE atlazdb;
+DROP DATABASE if EXISTS AtlazMultiflash;
+CREATE DATABASE AtlazMultiflash;
+USE AtlazMultiflash;
 CREATE TABLE usuarios(
   user VARCHAR (50) PRIMARY KEY NOt NULL,
   pass VARCHAR (50) NOT NULL
@@ -54,9 +54,12 @@ CREATE TABLE cliente(
     correoCl VARCHAR (50) NOT NULL,
     telefonoCl VARCHAR (20) NOT NULL,
     fechanacCl VARCHAR (255) NOT NULL,
+    idzona INTEGER NULL,
     user VARCHAR (50) NOT NULL,
     index(user),
-    FOREIGN KEY (user) REFERENCES usuarios (user)
+    FOREIGN KEY (user) REFERENCES usuarios (user),
+    index(idzona),
+    FOREIGN KEY (idzona) REFERENCES zonas (idzona)
   );
 CREATE TABLE categorias(
     nomCategoria VARCHAR (50) PRIMARY KEY NOT NULL
