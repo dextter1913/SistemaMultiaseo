@@ -18,23 +18,24 @@
                             <div class="shadow p-3 mb-5 bg-body rounded">
                                 <form action="registro.php" method="post">
                                     <div class="row">
-                                        <div class="col-12 col-md-1"></div>
                                         <div class="col-12 col-md-2">
                                             <label for="id">Documento</label>
                                             <input type="text" name="id" id="id" class="form-control" placeholder="Documento">
                                         </div>
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-3 col-lg-3">
                                             <label for="nombre">Nombre</label>
                                             <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre">
                                         </div>
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-sm-6 col-md-3 col-lg-3">
                                             <label for="apellido">Apellido</label>
                                             <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Apellido">
                                         </div>
-                                        <div class="col-12 col-md-1"></div>
+                                        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+                                            <label for="nombrenegocio">Nombre Negocio</label>
+                                            <input type="text" name="nombrenegocio" id="nombrenegocio" class="form-control" placeholder="Nombre Negocio">
+                                        </div>
                                     </div><br>
                                     <div class="row">
-                                        <div class="col-12 col-md-1"></div>
                                         <div class="col-12 col-md-3">
                                             <label for="inputState">Ciudad</label>
                                             <select id="inputState" class="form-select" name="ciudad">
@@ -46,18 +47,20 @@
                                                 <option>Rionegro Antioquia</option>
                                             </select>
                                         </div>
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-3">
                                             <label for="direccion">Direccion</label>
                                             <input type="text" name="direccion" id="direccion" class="form-control" placeholder="Direccion">
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                                            <label for="barrio">Barrio</label>
+                                            <input type="text" name="barrio" id="barrio" placeholder="Ingrese el Barrio" class="form-control">
                                         </div>
                                         <div class="col-12 col-md-3">
                                             <label for="correo">Correo</label>
                                             <input type="email" name="correo" id="correo" class="form-control" placeholder="Correo">
                                         </div>
-                                        <div class="col-12 col-md-1"></div>
                                     </div><br>
                                     <div class="row">
-                                        <div class="col-12 col-md-1"></div>
                                         <div class="col-12 col-md-4">
                                             <label for="telefono">Telefono</label>
                                             <input type="text" name="telefono" id="telefono" class="form-control" placeholder="Telefono">
@@ -66,19 +69,19 @@
                                             <label for="fechanac">Fecha de Nacimiento</label>
                                             <input type="date" name="fechanac" id="fechanac" class="form-control">
                                         </div>
-                                        <div class="col-12 col-md-3">
+                                        <div class="col-12 col-sm-6 col-md-2 col-lg-2">
                                             <label for="usuario">Usuario</label>
                                             <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Ingrese Usuario">
                                         </div>
-                                    </div><br>
-                                    <div class="row">
-                                        <div class="col-12 col-md-6"></div>
-                                        <div class="col-12 col-md-2">
+                                        <div class="col-12 col-sm-6 col-md-1 col-lg-1">
+                                            <label for="zona">zona</label>
+                                            <input type="text" name="zona" id="zona" class="form-control" placeholder="N°">
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-md-1 col-lg-1">
                                             <input type="submit" value="Registrar" class="btn btn-outline-success btn-lg" name="btningresar">
                                         </div>
-                                        <div class="col-12 col-md-4"></div>
                                     </div>
-                                </form><br>
+                                </form>
                             </div>
 
                         </div>
