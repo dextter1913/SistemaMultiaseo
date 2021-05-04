@@ -78,33 +78,6 @@ CREATE TABLE productos(
     INDEX (user),
     FOREIGN KEY (user) REFERENCES usuarios (user)
   );
-INSERT INTO
-  categorias(nomCategoria)
-VALUES("Mercado");
-INSERT INTO
-  categorias(nomCategoria)
-VALUES("Tecnología");
-INSERT INTO
-  categorias(nomCategoria)
-VALUES("Electrodomésticos");
-INSERT INTO
-  categorias(nomCategoria)
-VALUES("Hogar");
-INSERT INTO
-  categorias(nomCategoria)
-VALUES("Moda y accesorios");
-INSERT INTO
-  categorias(nomCategoria)
-VALUES("Salud y belleza");
-INSERT INTO
-  categorias(nomCategoria)
-VALUES("Bebés, niños y juguetería");
-INSERT INTO
-  categorias(nomCategoria)
-VALUES("Deportes");
-INSERT INTO
-  categorias(nomCategoria)
-VALUES("Ferretería");
 CREATE TABLE facturaVentas(
     Nfactura INTEGER (25) PRIMARY KEY AUTO_INCREMENT,
     fechaFactura DATE NOT NULL,
@@ -125,74 +98,4 @@ CREATE TABLE venta(
     FOREIGN KEY (producto) REFERENCES productos(idProd),
     index(Factura),
     FOREIGN KEY (Factura) REFERENCES facturaVentas(Nfactura)
-  );
-INSERT INTO
-  productos(
-    nomProd,
-    precioProd,
-    precioVenta,
-    nomCategoria,
-    descripcionProd,
-    Stock,
-    user
-  )
-VALUES(
-    "NoteBook vivoB Asus",
-    1560000,
-    2700000,
-    "Tecnología",
-    "Pantalla 14 LCD SSD512GB, 12GBDDR4, Ryzen73700U",
-    20,
-    "dextter1913"
-  ),(
-    "Macbook pro",
-    1950000,
-    3200000,
-    "Tecnología",
-    "Pantalla 15 LCD SSD1TB, 8GBDDR4, Core i7 Gen9",
-    25,
-    "dextter1913"
-  );
-INSERT INTO
-  cliente(
-    idCl,
-    nombreCl,
-    apellidoCl,
-    ciudadCl,
-    direccionCl,
-    correoCl,
-    telefonoCl,
-    fechanacCl,
-    user
-  )
-VALUES(
-    '1000764838',
-    'Norena',
-    'Godoy',
-    'Medellín Antioquia',
-    'Cra 33 47 35',
-    'Norenagodoy90@gmail.com',
-    '3135779037',
-    '1998-08-04',
-    'dextter1913'
-  ),(
-    '1035391050',
-    'Cristian',
-    'Aguirre',
-    'Medellín Antioquia',
-    'carrera 33 47 35',
-    'clau32usa@gmail.com',
-    '3166857000',
-    '1994-07-16',
-    'dextter1913'
-  ),(
-    '32290398',
-    'Claudia',
-    'Cataño',
-    'Medellín Antioquia',
-    'Cra 33 # 47 35',
-    'claudiacatano001@gmail.com',
-    '3147555068',
-    '2021-03-01',
-    'dextter1913'
   );
