@@ -9,7 +9,7 @@ class Conexion
     protected $tbempleado;
     protected $tbusuarios;
     protected $tbproductos;
-    function __construct($host = "atlaz.cvcpedzqpzzg.us-east-2.rds.amazonaws.com", $user = "admin", $pass = "12345678", $db = "atlazdb", $tbcliente = "cliente", $tbempleado = "empleados", $tbusuarios = "usuarios", $tbproductos = "productos")
+    function __construct($host = "atlaz.cvcpedzqpzzg.us-east-2.rds.amazonaws.com", $user = "admin", $pass = "12345678", $db = "multiaseo", $tbcliente = "cliente", $tbempleado = "empleados", $tbusuarios = "usuarios", $tbproductos = "productos")
     {
         $this->host = $host;
         $this->user = $user;
