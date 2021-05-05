@@ -1,6 +1,6 @@
-DROP DATABASE if EXISTS AtlazMultiflash;
-CREATE DATABASE AtlazMultiflash;
-USE AtlazMultiflash;
+DROP DATABASE if EXISTS multiaseo;
+CREATE DATABASE multiaseo;
+USE multiaseo;
 CREATE TABLE usuarios(
   user VARCHAR (50) PRIMARY KEY NOt NULL,
   pass VARCHAR (50) NOT NULL
@@ -49,8 +49,10 @@ CREATE TABLE cliente(
     idCl VARCHAR (20) PRIMARY KEY NOT NULL,
     nombreCl VARCHAR (50) NOT NULL,
     apellidoCl VARCHAR (50) NOT NULL,
+    nombrenegocio VARCHAR (50) NOT NULL,
     ciudadCl VARCHAR (30) NOT NULL,
     direccionCl VARCHAR (50) NOT NULL,
+    barrio VARCHAR (50) NOT NULL,
     correoCl VARCHAR (50) NOT NULL,
     telefonoCl VARCHAR (20) NOT NULL,
     fechanacCl VARCHAR (255) NOT NULL,
