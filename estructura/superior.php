@@ -56,6 +56,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="buscar-factura.php">Buscar Factura</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="consulta.php">Consulta</a>
+                            </li>
                         </ul>
                         <form action="../principal/busqueda.php" method="GET" class="d-flex">
                             <input class="form-control me-2" name="id" type="search" placeholder="Ingrese ID" aria-label="Search">
