@@ -5,7 +5,7 @@ include("../estructura/formularioInsert.php")
 <?php //estableciendo conexion y insertando los datos
 if (isset($_POST['btningresar'])) {
     require_once '../clases/InsertarCliente.php';
-    $ingresarCliente = new InsertarCliente($_POST['id'], $_POST['nombre'], $_POST['apellido'], $_POST['ciudad'], $_POST['direccion'], $_POST['correo'], $_POST['telefono'], $_POST['fechanac'], $_POST['usuario']);
+    $ingresarCliente = new InsertarCliente($_POST['id'], $_POST['nombre'], $_POST['apellido'],$_POST['nombrenegocio'], $_POST['ciudad'], $_POST['direccion'],$_POST['barrio'], $_POST['correo'], $_POST['telefono'], $_POST['fechanac'],$_POST['zona'], $_POST['usuario']);
     $ingresarCliente->Insertar();
 }
 

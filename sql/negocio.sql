@@ -57,11 +57,11 @@ CREATE TABLE cliente(
     telefonoCl VARCHAR (20) NOT NULL,
     fechanacCl VARCHAR (255) NOT NULL,
     idzona INTEGER NULL,
+    index(idzona),
+    FOREIGN KEY (idzona) REFERENCES zonas (idzona),
     user VARCHAR (50) NOT NULL,
     index(user),
-    FOREIGN KEY (user) REFERENCES usuarios (user),
-    index(idzona),
-    FOREIGN KEY (idzona) REFERENCES zonas (idzona)
+    FOREIGN KEY (user) REFERENCES usuarios (user)
   );
 CREATE TABLE categorias(
     nomCategoria VARCHAR (50) PRIMARY KEY NOT NULL
