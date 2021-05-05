@@ -10,7 +10,7 @@ if (isset($_GET['btnbuscarr'])) {
     $busquedatemporal = $busqueda->ConsultaTabla();
     while ($resultados = mysqli_fetch_array($busquedatemporal)) {
 ?>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-12 col-md-12"></div>
                 <div class="col-12 col-md-12">
@@ -29,13 +29,16 @@ if (isset($_GET['btnbuscarr'])) {
                                             <center> Apellido</center>
                                         </th>
                                         <th scope="col">
+                                            <center> Nombre Negocio</center>
+                                        </th>
+                                        <th scope="col">
                                             <center> Ciudad</center>
                                         </th>
                                         <th scope="col">
                                             <center> Direccion</center>
                                         </th>
                                         <th scope="col">
-                                            <center> Correo</center>
+                                            <center>Barrio</center>
                                         </th>
                                         <th scope="col">
                                             <center> Telefono</center>
@@ -62,13 +65,16 @@ if (isset($_GET['btnbuscarr'])) {
                                         <center><?php echo $resultados['apellidoCl']; ?></center>
                                     </td>
                                     <td>
+                                        <center><?php echo $resultados['nombrenegocio']; ?></center>
+                                    </td>
+                                    <td>
                                         <center><?php echo $resultados['ciudadCl']; ?></center>
                                     </td>
                                     <td>
                                         <center><?php echo $resultados['direccionCl']; ?></center>
                                     </td>
                                     <td>
-                                        <center><?php echo $resultados['correoCl']; ?></center>
+                                        <center><?php echo $resultados['barrio']; ?></center>
                                     </td>
                                     <td>
                                         <center><?php echo $resultados['telefonoCl']; ?></center>
