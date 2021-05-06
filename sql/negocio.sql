@@ -80,6 +80,14 @@ CREATE TABLE productos(
     INDEX (user),
     FOREIGN KEY (user) REFERENCES usuarios (user)
   );
+
+    CREATE TABLE preciosProductos(
+      idprecio INTEGER AUTO_INCREMENT PRIMARY KEY,
+      precio DOUBLE NOT NULL,
+      idProd INTEGER (20),
+      index(idProd),
+      FOREIGN KEY (idProd) REFERENCES productos(idpProd)
+    );
 CREATE TABLE facturaVentas(
     Nfactura INTEGER (25) PRIMARY KEY AUTO_INCREMENT,
     fechaFactura DATE NOT NULL,
