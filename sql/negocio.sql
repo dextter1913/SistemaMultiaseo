@@ -86,7 +86,7 @@ CREATE TABLE productos(
       precio DOUBLE NOT NULL,
       idProd INTEGER (20),
       index(idProd),
-      FOREIGN KEY (idProd) REFERENCES productos(idpProd)
+      FOREIGN KEY (idProd) REFERENCES productos(idProd)
     );
 CREATE TABLE facturaVentas(
     Nfactura INTEGER (25) PRIMARY KEY AUTO_INCREMENT,
