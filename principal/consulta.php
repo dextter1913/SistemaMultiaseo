@@ -1,6 +1,6 @@
 <?php
 require_once '../estructura/superior.php';
-require_once '../clases/StringConsultaProducto.php';
+require_once '../clases/ConsultarProducto.php';
 require_once '../clases/Conexion.php';
 ?>
 
@@ -26,7 +26,7 @@ require_once '../clases/Conexion.php';
         <div class="col-12 col-sm-4 col-md-10 col-lg-10 table-responsive">
             <?php
             if (isset($_POST['btnBuscarProductos'])) {
-                $consulta = new StringConsultaProducto($_POST['producto']);
+                $consulta = new ConsultarProducto($_POST['producto']);
                 $conexion = new Conexion();
                 $total = mysqli_query($conexion->EstablecerConexion(), $consulta->QuerySeleccionarProducto())
             ?>
