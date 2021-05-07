@@ -16,7 +16,7 @@ require_once '../clases/Conexion.php';
             echo "<center>zona agregada correctamente</center>";
             $consultazona = mysqli_query($conexion->EstablecerConexion(), "SELECT idzona FROM zonas ORDER by idzona DESC LIMIT 1");
             $resultado = mysqli_fetch_array($consultazona);
-            echo $resultado['idzona'];
+            echo '<center>Numero de zona <b>'.$resultado['idzona'].'</b></center>';
             
 
         }
