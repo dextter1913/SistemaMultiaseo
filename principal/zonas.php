@@ -1,20 +1,20 @@
 <?php
 require_once '../estructura/superior.php';
-require_once '../clases/AbrirZonas.php';
+require_once '../clases/Conexion.php';
+require_once '../clases/ConsultarZonas.php';
 ?>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 col-md-1 col-lg-1"></div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-4 shadow p-3 mb-5 bg-body rounded">
-            <form action="zonas.php" method="post">
+<div class="container">
+    <div class="row shadow p-3 mb-5 bg-body rounded">
+    <center><h1><i>Ingresar y consultar zonas</i></h1></center>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+            <form action="../PuertaTrasera/ProcesoIngresarZona.php" method="post">
                 <label for="nombrezona" title="Nombre de nueva zona">Nombre Zona</label>
                 <input type="text" name="nombrezona" id="nombrezona" class="form-control" placeholder="Nombre de nueva zona"> <br />
                 <button type="submit" name="btnagregarzona" class="btn btn-outline-secondary btn-lg">Agregar Zona</button>
             </form>
         </div>
-        <div class="col-12 col-md-1 col-lg-1"></div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-6 table-responsive">
-            <table class="table table-hover">
+            <table class="table table-hover shadow p-3 mb-5 bg-body rounded">
                 <thead>
                     <tr>
                         <th>
@@ -26,20 +26,26 @@ require_once '../clases/AbrirZonas.php';
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                    </tr>
+                    <?php
+                    $consultarxonas = new ConsultarZonas();
+                    $conexion = new Conexion();
+                    $resultado = mysqli_query($conexion->EstablecerConexion(), $consultarxonas->MostrarZonas());
+                    while ($row = mysqli_fetch_array($resultado)) {
+                    ?>
+                        <tr>
+                            <td>
+                                <center><?= $row['idzona']; ?></center>
+                            </td>
+                            <td>
+                                <center><?= $row['nombrezona']; ?></center>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
+            <form action="" method="post"></form>
         </div>
     </div>
-    <?php
-
-    if (isset($_POST['btnagregarzona'])) {
-        $AbrirZonas = new AbrirZonas($_POST['nombrezona']);
-        $AbrirZonas->insertarzona();
-    }
-    ?>
 </div>
 
 <?php require_once '../estructura/inferior.php'; ?>
