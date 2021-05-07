@@ -5,7 +5,9 @@ require_once '../clases/ConsultarZonas.php';
 ?>
 <div class="container">
     <div class="row shadow p-3 mb-5 bg-body rounded">
-    <center><h1><i>Ingresar y consultar zonas</i></h1></center>
+        <center>
+            <h1><i>Ingresar y consultar zonas</i></h1>
+        </center>
         <div class="col-12 col-sm-6 col-md-6 col-lg-6">
             <form action="../PuertaTrasera/ProcesoIngresarZona.php" method="post">
                 <label for="nombrezona" title="Nombre de nueva zona">Nombre Zona</label>
@@ -23,6 +25,9 @@ require_once '../clases/ConsultarZonas.php';
                         <th>
                             <center>Nombre de la zona</center>
                         </th>
+                        <th>
+                            <center>Seleccionar</center>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,6 +43,9 @@ require_once '../clases/ConsultarZonas.php';
                             </td>
                             <td>
                                 <center><?= $row['nombrezona']; ?></center>
+                            </td>
+                            <td>
+                                <center><a href="../PuertaTrasera/ProcesoEliminarZona.php?id=<?= $row['idzona'];?>"><button class="btn btn-outline-danger" title="Eliminar Zona"><i class="fas fa-trash-alt"></i></button></a></center>
                             </td>
                         </tr>
                     <?php } ?>
