@@ -194,6 +194,17 @@ include("../conexiones/abrir.php");
         <?php
         }
         ?>
+        <form action="ventas.php" method="post">
+            <div class="row">
+                <div class="col-12 col-sm-4 col-md-4 col-lg-4"></div>
+                <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+                    <label for="gastosfijos">Gastos fijos</label>
+                    <input type="text" name="gastosfijos" id="gastosfijos" class="form-control"><br/>
+                    <button type="submit" class="btn btn-outline-primary">Sacar</button>
+                </div>
+                <div class="col-12 col-sm-4 col-md-4 col-lg-4"></div>
+            </div>
+        </form>
     </div>
 </div>
 

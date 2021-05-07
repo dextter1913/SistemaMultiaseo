@@ -11,6 +11,7 @@
   <link rel="stylesheet" type="text/css" href="../../fontawesome/css/all.css">
   <link rel="stylesheet" type="text/css" href="./fontawesome/css/all.css">
 </head>
+
 <body>
   <div class="container-fluid">
     <div class="shadow-lg p-3 mb-5 bg-body rounded">
@@ -33,6 +34,12 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../buscar-factura.php">Buscar Factura</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="consulta.php">Consulta</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="zonas.php">Zonas</a>
               </li>
             </ul>
             <form action="../busqueda.php" method="post" class="d-flex">

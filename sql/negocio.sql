@@ -109,3 +109,9 @@ CREATE TABLE venta(
     index(Factura),
     FOREIGN KEY (Factura) REFERENCES facturaVentas(Nfactura)
   );
+
+  CREATE TABLE gastos(
+    idgasto INTEGER AUTO_INCREMENT PRIMARY KEY,
+    cantidad INTEGER (25) NOT NULL,
+    fechagasto DATETIME
+  );

@@ -118,7 +118,7 @@
                                             <label for="categoria">Categoria</label>
                                             <select id="categoria" class="form-select" name="categoria">
                                                 <option selected>Seleccionar</option>
-                                                <option>Mercado</option>
+                                                <option>Jabones de manos</option>
                                                 <option>Tecnología</option>
                                                 <option>Electrodomésticos</option>
                                                 <option>Hogar</option>
