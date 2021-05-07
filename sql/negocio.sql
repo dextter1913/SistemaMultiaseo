@@ -113,7 +113,8 @@ CREATE TABLE venta(
   );
 CREATE TABLE gastos(
     idgasto INTEGER AUTO_INCREMENT PRIMARY KEY,
-    cantidad INTEGER (25) NOT NULL,
+    fijos INTEGER (25) NOT NULL,
+    variables INTEGER (25) NOT NULL 
     fechagasto DATETIME
   );
 CREATE TABLE totales(
