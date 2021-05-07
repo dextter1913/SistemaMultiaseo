@@ -7,7 +7,7 @@ CREATE TABLE usuarios(
 );
 INSERT INTO
   usuarios(user, pass)
-VALUES("dextter1913", "123"),("admin","123");
+VALUES("dextter1913", "123"),("admin", "123");
 CREATE TABLE empleados(
     idEmp VARCHAR (20) PRIMARY KEY NOT NULL,
     nombreEmp VARCHAR (50) NOT NULL,
@@ -38,10 +38,10 @@ VALUES(
     "3166857000",
     "cra 33 47 35 int 172",
     "clau32usa@gmail.com",
-    1994-07-16,
+    1994 -07 -16,
     "dextter1913"
   );
-  CREATE TABLE zonas(
+CREATE TABLE zonas(
     idzona INTEGER AUTO_INCREMENT PRIMARY KEY,
     nombrezona VARCHAR (60) NOT NULL
   );
@@ -66,6 +66,9 @@ CREATE TABLE cliente(
 CREATE TABLE categorias(
     nomCategoria VARCHAR (50) PRIMARY KEY NOT NULL
   );
+INSERT INTO
+  categorias(nomCategoria)
+values('HIPOCLORITO'),('JABON'),('AMONIO'),('MULTIUSOS'),('DETERGENTE'),('DESENGRASANTE'),('LIMPIADOR'),('ALCOHOL'),('GEL');
 CREATE TABLE productos(
     idProd INTEGER (20) PRIMARY KEY AUTO_INCREMENT,
     nomProd VARCHAR (50) NOT NULL,
@@ -80,14 +83,13 @@ CREATE TABLE productos(
     INDEX (user),
     FOREIGN KEY (user) REFERENCES usuarios (user)
   );
-
-    CREATE TABLE preciosProductos(
-      idprecio INTEGER AUTO_INCREMENT PRIMARY KEY,
-      precio DOUBLE NOT NULL,
-      idProd INTEGER (20),
-      index(idProd),
-      FOREIGN KEY (idProd) REFERENCES productos(idProd)
-    );
+CREATE TABLE preciosProductos(
+    idprecio INTEGER AUTO_INCREMENT PRIMARY KEY,
+    precio DOUBLE NOT NULL,
+    idProd INTEGER (20),
+    index(idProd),
+    FOREIGN KEY (idProd) REFERENCES productos(idProd)
+  );
 CREATE TABLE facturaVentas(
     Nfactura INTEGER (25) PRIMARY KEY AUTO_INCREMENT,
     fechaFactura DATE NOT NULL,
@@ -109,15 +111,13 @@ CREATE TABLE venta(
     index(Factura),
     FOREIGN KEY (Factura) REFERENCES facturaVentas(Nfactura)
   );
-
-  CREATE TABLE gastos(
+CREATE TABLE gastos(
     idgasto INTEGER AUTO_INCREMENT PRIMARY KEY,
     cantidad INTEGER (25) NOT NULL,
     fechagasto DATETIME
   );
-
-  CREATE TABLE totales(
+CREATE TABLE totales(
     idtotal INTEGER AUTO_INCREMENT PRIMARY KEY,
     cantidad INTEGER (25) NOT NULL,
-    fechatotal DATETIME 
+    fechatotal DATETIME
   );
