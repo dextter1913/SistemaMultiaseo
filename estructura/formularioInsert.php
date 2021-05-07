@@ -118,20 +118,19 @@
                                             <label for="categoria">Categoria</label>
                                             <select id="categoria" class="form-select" name="categoria">
                                                 <option selected>Seleccionar</option>
-                                                <option>Jabones de manos</option>
-                                                <option>Tecnología</option>
-                                                <option>Electrodomésticos</option>
-                                                <option>Hogar</option>
-                                                <option>Moda y accesorios</option>
-                                                <option>Salud y belleza</option>
-                                                <option>Bebés, niños y juguetería</option>
-                                                <option>Deportes</option>
-                                                <option>Bello Antioquia</option>
-                                                <option>Ferretería</option>
+                                                <option>ALCOHOL</option>
+                                                <option>AMONIO</option>
+                                                <option>DETERGENTE</option>
+                                                <option>DESENGRASANTE</option>
+                                                <option>GEL</option>
+                                                <option>HIPOCLORITO</option>
+                                                <option>JABON</option>
+                                                <option>LIMPIADOR</option>
+                                                <option>MULTIUSOS</option>
                                             </select>
                                         </div>
                                         <div class="col-12 col-md-3 col-lg-3">
-                                        <label for="usuario1">Usuario:</label>
+                                            <label for="usuario1">Usuario:</label>
                                             <input type="text" name="usuario" id="usuario1" class="form-control" placeholder="Ingrese su usuario">
                                         </div>
                                         <div class="col-12 col-md-6 col-lg-6">
@@ -143,7 +142,7 @@
                                             <label for="Stock">Stock y/o Cantidad</label>
                                             <input type="number" name="Stock" id="Stock" class="form-control" placeholder="Cantidad">
                                         </div>
-                                        <div class="col-12 col-md-3 col-lg-3"><br/><input type="submit" value="Registrar" class="btn btn-outline-success btn-lg" name="btnregistrar"></div>
+                                        <div class="col-12 col-md-3 col-lg-3"><br /><input type="submit" value="Registrar" class="btn btn-outline-success btn-lg" name="btnregistrar"></div>
                                     </div>
                             </div>
                             </form>
