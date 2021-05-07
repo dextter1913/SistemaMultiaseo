@@ -115,3 +115,9 @@ CREATE TABLE venta(
     cantidad INTEGER (25) NOT NULL,
     fechagasto DATETIME
   );
+
+  CREATE TABLE totales(
+    idtotal INTEGER AUTO_INCREMENT PRIMARY KEY,
+    cantidad INTEGER (25) NOT NULL,
+    fechatotal DATETIME 
+  );
