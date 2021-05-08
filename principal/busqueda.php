@@ -87,15 +87,10 @@ if (isset($_GET['btnbuscarr'])) {
                                     </td>
                                     <td>
                                         <center>
-
                                             <?php
-                                            //Busca el ultimo ID de factura generado
-                                            $_POST['btnIngresarFactura']; //boton de ingresar venta del cliente buscado
-                                            $NumeroFactura = $busqueda->ConsultaIngresarFactura()['Nfactura']; //consultando numero de factura con el objeto BuscarCliente
-                                            //inserta una nueva factura por adelantado
-                                            //$conexion->query("INSERT INTO facturaVentas(fechaFactura) VALUES(CURDATE())");
+                                            $NumeroFactura = $busqueda->ConsultaIngresarFactura()['Nfactura']; //consultando numero de factura con el objeto BuscarCliente Busca el ultimo ID de factura generado
                                             ?>
-                                            <form action="../PuertaTrasera/ProcesoInsertarFactura.php?id=<?php echo $resultados['idCl']; ?>&idfactura=<?php echo $NumeroFactura; ?>" method="post">
+                                            <form action="../PuertaTrasera/ProcesoInsertarFactura.php?id=<?php echo $resultados['idCl']; ?>&idfactura=<?php echo $NumeroFactura; ?>" method="post"><?php //Enviando id cliente y numero de factura por metodo get a procedimiento insertaar factura?>
                                                 <button type="submit" class="btn btn-outline-warning" name="btnIngresarFactura"><i class="fas fa-shopping-cart"></i></button>
                                             </form>
                                         </center>
