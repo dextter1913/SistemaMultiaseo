@@ -45,7 +45,7 @@ require_once '../clases/ConsultarZonas.php';
                                 <center><?= $row['nombrezona']; ?></center>
                             </td>
                             <td>
-                                <center><a href="../PuertaTrasera/ProcesoEliminarZona.php?id=<?= $row['idzona'];?>"><button class="btn btn-outline-danger" title="Eliminar Zona"><i class="fas fa-trash-alt"></i></button></a></center>
+                                <center><a href="submenu/ModificarZonas.php?id=<?= $row['idzona'];?>"><button class="btn btn-outline-warning" title="Modificar Zona"><i class="fas fa-pencil-alt"></i></button></a><a href="../PuertaTrasera/ProcesoEliminarZona.php?id=<?= $row['idzona'];?>"><button class="btn btn-outline-danger" title="Eliminar Zona"><i class="fas fa-trash-alt"></i></button></a></center>
                             </td>
                         </tr>
                     <?php } ?>

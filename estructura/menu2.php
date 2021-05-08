@@ -36,10 +36,13 @@
                 <a class="nav-link" href="../buscar-factura.php">Buscar Factura</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="consulta.php">Consulta</a>
+                <a class="nav-link" href="../consulta.php">Consulta</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="zonas.php">Zonas</a>
+                <a class="nav-link" href="../zonas.php">Zonas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../gastos.php">Gastos</a>
               </li>
             </ul>
             <form action="../busqueda.php" method="post" class="d-flex">
