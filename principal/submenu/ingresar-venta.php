@@ -1,5 +1,6 @@
 <?php
 include("../../estructura/menu2.php");
+require_once '../../conexiones/abrir.php';
 
 ?>
 <div class="container-fluid">
@@ -32,20 +33,20 @@ include("../../estructura/menu2.php");
                         <tbody>
                             <?php
                             if (isset($_POST['btnBuscarProductoV'])) {
-                                //$_id = $_POST['nombreproducto'];
-                                //$consulta = mysqli_query($conexion, "SELECT * FROM  productos WHERE idProd = '$_id' OR nomProd LIKE '$_id%'");
-                                //while ($row = mysqli_fetch_array($consulta)) {
-                                    require_once '../../clases/SeleccionarProducto.php';
-                                    require_once '../../clases/BuscarProducto.php';
-                                    $ConsultarProducto = new BuscarProducto();
-                                    $seleccionarproducto = new SeleccionarProducto($_POST['nombreproducto']);
-                                    while ($ConsultarProducto->ConsultarProducto()) {
+                                $_id = $_POST['nombreproducto'];
+                                $consulta = mysqli_query($conexion, "SELECT * FROM  productos WHERE idProd = '$_id' OR nomProd LIKE '$_id%'");
+                                while ($row = mysqli_fetch_array($consulta)) {
+                                    //require_once '../../clases/SeleccionarProducto.php';
+                                    //require_once '../../clases/BuscarProducto.php';
+                                    //$ConsultarProducto = new BuscarProducto();
+                                    //$seleccionarproducto = new SeleccionarProducto($_POST['nombreproducto']);
+                                    //while ($ConsultarProducto->ConsultarProducto()) {
                             ?>
                                     <tr>
-                                        <td><?php echo $ConsultarProducto->ConsultarProducto()['idProd']; ?></td>
-                                        <td><?php echo $ConsultarProducto->ConsultarProducto()['nomProd']; ?></td>
-                                        <td><?php echo $ConsultarProducto->ConsultarProducto()['precioVenta']; ?></td>
-                                        <td><?php echo $ConsultarProducto->ConsultarProducto()['categoria']; ?></td>
+                                        <td><?php echo $row['idProd']; ?></td>
+                                        <td><?php echo $row['nomProd']; ?></td>
+                                        <td><?php echo $row['precioVenta']; ?></td>
+                                        <td><?php echo $row['categoria']; ?></td>
                                     </tr>
                             <?php }
                             } ?>

@@ -1,6 +1,7 @@
 <?php
 include("../estructura/superior.php");
 include("../conexiones/abrir.php");
+require_once '../clases/InsertarGanancias.php';
 ?>
 <div class="container-fluid">
     <center>
@@ -166,11 +167,14 @@ include("../conexiones/abrir.php");
                                             while ($suma = mysqli_fetch_array($registros3)) {
                                                 $recventa = $recventa + $suma['precioVenta'];
                                             }
-                                            echo "$" . $recventa; ?> </td>
+                                            echo '$' . $recventa; ?> </td>
                                         <td></td>
                                         <td><?php
                                             $totalGanacias = $recventa - $precioProd;
-                                            echo "$" . $totalGanacias;
+                                            echo '$' . $totalGanacias.'</br>';
+                                            echo $totalGanacias;
+                                            $insertarganancias = new InsertarGanancias($totalGanacias);
+                                            $insertarganancias->InsertarGanacias();
                                             ?>
                                         </td>
                                     </tr>
@@ -180,7 +184,8 @@ include("../conexiones/abrir.php");
                         <div class="container">
                             <div class="row">
                                 <div class="col-3 col-sm-3 col-md-3 col-lg-3"></div>
-                                <div class="col-3 col-sm-3 col-md-3 col-lg-3"></div>
+                                <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                                </div>
                                 <div class="col-3 col-sm-3 col-md-3 col-lg-3">
                                     <?php require('../estructura/ModalSacarReportePDF.php'); ?>
                                 </div>
