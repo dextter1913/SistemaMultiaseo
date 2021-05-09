@@ -15,5 +15,9 @@
 <body>
     <?php
     include("estructura/login.php");
+    session_start();
+    if (isset($_SESSION['Error'])) {
+        echo $_SESSION['Error'];
+    }
     include("./estructura/inferior.php");
     ?>

@@ -1,24 +1,25 @@
 <?php
-    //$_user = $_POST['usuario'];
-    //$_pass = $_POST['contraseña'];
-    //session_start();
-    //$_SESSION['usuario'] = $_user;
-    //include("../conexiones/abrir.php");
-    //$consulta = "SELECT * FROM usuarios WHERE user = '$_user' AND pass = '$_pass'";
-    //$resultado = mysqli_query($conexion, $consulta);
-    //$filas = mysqli_num_rows($resultado);
-    require_once '../clases/validacionlogin.php';
-    $resultado = new validacionlogin($_POST['usuario'], $_POST['contraseña']);
-    if ($resultado->GuardandoConsultaValidarUsuario()) {
-        session_start();
-        $_SESSION['usuario'] = $_POST['usuario'];
-        header("Location:../principal/app.php");
-    } else {
-        echo "Datos incorrectos";
-        header("Location:../index.php");
-    }
+require_once '../clases/validacionlogin.php';
+$resultado = new validacionlogin($_POST['usuario'], $_POST['contraseña']);
+if ($resultado->GuardandoConsultaValidarUsuario()) {
+    session_start();
+    $_SESSION['usuario'] = $_POST['usuario'];
+    header("Location:../principal/app.php");
+} elseif ($_POST['usuario'] == "" && $_POST['contraseña'] == "" || $_POST['usuario'] == " " || $_POST['contraseña'] == " ") {
+    session_start();
+    $_SESSION['Error'] = "<center><p class=\"text-primary\">Ingrese todos los Datos</p></center>";
+    header("Location:../");
+} elseif ($_POST['contraseña'] == "" || $_POST['contraseña'] == " ") {
+    session_start();
+    $_SESSION['Error'] = "<center><p class=\"text-info\">Ingrese su contraseña</p></center>";
+    header("Location:../");
+} elseif ($_POST['usuario'] == "" || $_POST['usuario'] == " ") {
+    session_start();
+    $_SESSION['Error'] = "<center><p class=\"text-info\">Ingrese su usuario</p></center>";
+    header("Location:../");
+} else {
+    session_start();
+    $_SESSION['Error'] = "<center><p class=\"text-danger\"><b>Datos incorrectos</b></p></center>";
+    header("Location:../");
+}
 ?>
-
-
-
-
