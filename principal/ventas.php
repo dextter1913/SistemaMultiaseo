@@ -171,8 +171,7 @@ require_once '../clases/InsertarGanancias.php';
                                         <td></td>
                                         <td><?php
                                             $totalGanacias = $recventa - $precioProd;
-                                            echo '$' . $totalGanacias.'</br>';
-                                            echo $totalGanacias;
+                                            echo '$' . $totalGanacias . '</br>';
                                             $insertarganancias = new InsertarGanancias($totalGanacias);
                                             $insertarganancias->InsertarGanacias();
                                             ?>
@@ -181,26 +180,27 @@ require_once '../clases/InsertarGanancias.php';
                                 </tfoot>
                             </table>
                         </div>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-3 col-sm-3 col-md-3 col-lg-3"></div>
-                                <div class="col-3 col-sm-3 col-md-3 col-lg-3">
-                                </div>
-                                <div class="col-3 col-sm-3 col-md-3 col-lg-3">
-                                    <?php require('../estructura/ModalSacarReportePDF.php'); ?>
-                                </div>
-                                <div class="col-3 col-sm-3 col-md-3 col-lg-3"></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-12"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-3"></div>
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                    </div>
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+                        <?php require('../estructura/ModalSacarReportePDF.php'); ?>
+                    </div>
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-3"></div>
+                </div>
             </div>
         <?php
         }
         ?>
     </div>
 </div>
+
 
 <?php
 include("../conexiones/cerrar.php");
