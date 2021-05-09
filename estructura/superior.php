@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,20 +11,24 @@
     <link rel="stylesheet" type="text/css" href="../../fontawesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="./fontawesome/css/all.css">
 </head>
+
 <body>
 
     <?php
     if (isset($_POST['btniniciarsesion'])) {
-        $_user = $_POST['usuario'];
-        $_pass = $_POST['contraseña'];
-        session_start();
-        ob_start();
-        $_SESSION['usuario'] = $_user;
-        include("../conexiones/abrir.php");
-        $consulta = "SELECT * FROM usuarios WHERE user = '$_user' AND pass = '$_pass'";
-        $resultado = mysqli_query($conexion, $consulta);
-        $filas = mysqli_num_rows($resultado);
-        if ($filas) {
+        //$_user = $_POST['usuario'];
+        //$_pass = $_POST['contraseña'];
+        //session_start();
+        //$_SESSION['usuario'] = $_user;
+        //include("../conexiones/abrir.php");
+        //$consulta = "SELECT * FROM usuarios WHERE user = '$_user' AND pass = '$_pass'";
+        //$resultado = mysqli_query($conexion, $consulta);
+        //$filas = mysqli_num_rows($resultado);
+        require_once '../clases/validacionlogin.php';
+        $resultado = new validacionlogin($_POST['usuario'], $_POST['contraseña']);
+        if ($resultado->GuardandoConsultaValidarUsuario()) {
+            session_start();
+            $_SESSION['usuario'] = $_POST['usuario'];
             header("Location:./app.php");
         } else {
             echo "Datos incorrectos";
