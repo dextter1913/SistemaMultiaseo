@@ -15,7 +15,7 @@
         header("Location:../principal/app.php");
     } else {
         echo "Datos incorrectos";
-        header("Location:../../index.php");
+        header("Location:../index.php");
     }
 ?>
 

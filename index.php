@@ -11,8 +11,9 @@
     <link rel="stylesheet" type="text/css" href="../../fontawesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="./fontawesome/css/all.css">
 </head>
+
 <body>
-<?php
-include("./estructura/login.php");
-include("./estructura/inferior.php");
-?>
+    <?php
+    include("estructura/login.php");
+    include("./estructura/inferior.php");
+    ?>
