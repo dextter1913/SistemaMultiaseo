@@ -63,11 +63,17 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12 col-md-3"></div>
-        <div class="col-12 col-md-3"></div>
-        <div class="col-12 col-md-3"></div>
-        <div class="col-12 col-md-3"><i>Cristian Aguirre Developer</i></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <form action="../PuertaTrasera/CerrarSesion.php" method="post">
+                    <button class="btn btn-outline-danger btn-sm" name="btncerrarsesion"><i class="fas fa-power-off"></i></button>
+                </form>
+            </div>
+            <div class="col-12 col-md-3"></div>
+            <div class="col-12 col-md-3"></div>
+            <div class="col-12 col-md-3"><i>Cristian Aguirre Developer</i></div>
+        </div>
     </div>
 </footer>
 </html>

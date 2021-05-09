@@ -1,3 +1,4 @@
+<?php require_once '../PuertaTrasera/ProcesoValidacionSesionActivaAbrir.php';?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,7 +18,7 @@
     <div class="shadow-lg p-3 mb-5 bg-body rounded">
       <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="../app.php"><span class="fab fa-battle-net"><i> Atlaz</i></span></a>
+          <a class="navbar-brand" href="../app.php"><span class="fab fa-battle-net"><i> Atlaz</i></span> <?php session_start();echo $_SESSION['usuario'];?></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

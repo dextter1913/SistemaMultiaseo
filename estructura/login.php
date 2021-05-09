@@ -10,7 +10,7 @@
                             <h1 class="text-danger">Iniciar Sesion</h1><br>
                             <h2 class="text-secondary"><i>Atlaz</i></h2><br>
                         </center>
-                        <form action="principal/app.php" method="POST">
+                        <form action="PuertaTrasera/AbrirSesion.php" method="POST">
                             <div class="form-floating mb-3">
 
                                 <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario">

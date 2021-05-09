@@ -1,4 +1,5 @@
 <?php
+if (session_start()) {
 require_once '../estructura/superior.php';
 require_once '../clases/ConsultarProducto.php';
 require_once '../clases/Conexion.php';
@@ -90,4 +91,8 @@ require_once '../clases/Conexion.php';
     </div>
 </div>
 
-<?php require_once '../estructura/inferior.php'; ?>
+<?php 
+require_once '../estructura/inferior.php'; 
+} else {
+    header('Location:../index.php');
+}?>
