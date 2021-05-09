@@ -19,5 +19,8 @@
     if (isset($_SESSION['Error'])) {
         echo $_SESSION['Error'];
     }
+    if (isset($_SESSION['usuario'])) {
+        header('Location:principal/app.php');
+    }
     include("./estructura/inferior.php");
     ?>

@@ -1,4 +1,3 @@
-<?php require_once '../PuertaTrasera/ProcesoValidacionSesionActivaAbrir.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 

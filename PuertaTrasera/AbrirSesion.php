@@ -4,7 +4,7 @@ $resultado = new validacionlogin($_POST['usuario'], $_POST['contraseña']);
 if ($resultado->GuardandoConsultaValidarUsuario()) {
     session_start();
     $_SESSION['usuario'] = $_POST['usuario'];
-    header("Location:../principal/app.php");
+    header("Location:../principal/app.php");//Validaciones adicionales al momento de ingresar datos erroneos
 } elseif ($_POST['usuario'] == "" && $_POST['contraseña'] == "" || $_POST['usuario'] == " " || $_POST['contraseña'] == " ") {
     session_start();
     $_SESSION['Error'] = "<center><p class=\"text-primary\">Ingrese todos los Datos</p></center>";

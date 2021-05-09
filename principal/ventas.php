@@ -3,7 +3,6 @@ session_start();
 if (isset($_SESSION['usuario'])) {
     include("../estructura/superior.php");
     include("../conexiones/abrir.php");
-    require_once '../clases/InsertarGanancias.php';
 ?>
     <div class="container-fluid">
         <center>
@@ -41,6 +40,9 @@ if (isset($_SESSION['usuario'])) {
                 </div>
             </form>
             <?php
+            session_start();
+            echo $_SESSION['mensaje'];//Mostrando mensaje Total Ingresado, Recuerde Cuadrar Caja guardado en la sesion en ProcesoAgregarTotal
+            unset($_SESSION['mensaje']);
             if (isset($_POST['btnbuscarventas'])) {
             ?>
                 <div class="row">
@@ -171,12 +173,16 @@ if (isset($_SESSION['usuario'])) {
                                                 }
                                                 echo '$' . $recventa; ?> </td>
                                             <td></td>
-                                            <td><?php
-                                                $totalGanacias = $recventa - $precioProd;
-                                                echo '$' . $totalGanacias . '</br>';
-                                                $insertarganancias = new InsertarGanancias($totalGanacias);
-                                                $insertarganancias->InsertarGanacias();
-                                                ?>
+                                            <td>
+                                                <?php $totalGanacias = $recventa - $precioProd;
+                                                echo '$' . $totalGanacias . '</br>'; ?>
+                                            </td>
+                                            <td>
+                                                <center>
+                                                    <form action="../PuertaTrasera/ProcesoAgregarTotal.php?totalGanancias=<?=$totalGanacias;?>" method="post">
+                                                        <button class="btn btn-outline-primary btn-sm"><i class="fas fa-plus-circle"></i></button>
+                                                    </form>
+                                                </center>
                                             </td>
                                         </tr>
                                     </tfoot>

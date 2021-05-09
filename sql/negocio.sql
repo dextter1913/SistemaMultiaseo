@@ -120,5 +120,6 @@ CREATE TABLE gastos(
 CREATE TABLE totales(
     idtotal INTEGER AUTO_INCREMENT PRIMARY KEY,
     cantidad INTEGER (25) NOT NULL,
+    estado VARCHAR (25) NOT NULL,
     fechatotal DATETIME
   );
