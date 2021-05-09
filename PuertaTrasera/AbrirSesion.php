@@ -1,5 +1,4 @@
 <?php
-if (isset($_POST['btniniciarsesion'])) {
     //$_user = $_POST['usuario'];
     //$_pass = $_POST['contraseña'];
     //session_start();
@@ -18,7 +17,6 @@ if (isset($_POST['btniniciarsesion'])) {
         echo "Datos incorrectos";
         header("Location:../../index.php");
     }
-}
 ?>
 
 

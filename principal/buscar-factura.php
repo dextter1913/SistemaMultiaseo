@@ -1,5 +1,7 @@
 <?php
-include("../estructura/superior.php");
+session_start();
+if (isset($_SESSION['usuario'])) {
+require_once '../estructura/superior.php';
 ?>
 <div class="container">
     <div class="row">
@@ -28,5 +30,8 @@ include("../estructura/superior.php");
     </div>
 </div>
 <?php
-include("../estructura/inferior.php");
+require_once '../estructura/inferior.php';
+}else {
+    header('Location:../');
+}
 ?>

@@ -1,4 +1,6 @@
 <?php
+session_start();
+if (isset($_SESSION['usuario'])) {
 include("../../estructura/menu2.php");
 require_once '../../conexiones/abrir.php';
 
@@ -84,4 +86,7 @@ require_once '../../conexiones/abrir.php';
 </div>
 <?php
 include("../../estructura/inferior.php");
+}else {
+    header('Location:../../');
+}
 ?>

@@ -1,4 +1,6 @@
 <?php
+session_start();
+if (isset($_SESSION['usuario'])) {
 include("../../estructura/menu2.php");
 include("../../conexiones/abrir.php");
 ?>
@@ -119,4 +121,7 @@ require_once '../../conexiones/ConsultaFacturas.php';
 
 include("../../conexiones/cerrar.php");
 include("../../estructura/inferior.php");
+}else {
+    header('Location:../../');
+}
 ?>

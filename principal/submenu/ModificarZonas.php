@@ -1,4 +1,7 @@
-<?php require_once '../../estructura/menu2.php';
+<?php 
+session_start();
+if (isset($_SESSION['usuario'])) {
+require_once '../../estructura/menu2.php';
 require_once '../../clases/ModificarZonas.php';
 ?>
 <div class="container-fluid">
@@ -23,4 +26,8 @@ if (isset($_POST['btnModificarZona'])) {
 
 ?>
 
-<?php require_once '../../estructura/inferior.php'; ?>
+<?php require_once '../../estructura/inferior.php'; 
+}else {
+    header('Location:../../');
+}
+?>
