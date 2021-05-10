@@ -7,10 +7,15 @@ require_once '../clases/Conexion.php';
         public function __construct($id) {
             $this->id = $id;
         }
-        public function EliminarTotal(){
+        public function EliminarTotalSinCuadre(){
             $id = $this->id;
             $conexion = new Conexion();
-            $conexion->EstablecerConexion()->query("DELETE FROM totales WHERE idtotal= '$id'");
+            $conexion->EstablecerConexion()->query("DELETE FROM totales WHERE idtotal= '$id' AND estado = 'Pendiente de Cuadre'");
+        }
+        public function EliminarTotalConCuadre(){
+            $id = $this->id;
+            $conexion = new Conexion();
+            $conexion->EstablecerConexion()->query("DELETE FROM totales WHERE idtotal= '$id' AND estado = 'Cuadrado'");
         }
     }
     

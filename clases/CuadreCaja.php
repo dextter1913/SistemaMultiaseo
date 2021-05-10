@@ -1,4 +1,5 @@
 <?php 
+require_once 'Conexion.php';
     class CuadreCaja  
     {
         private $fijos;
@@ -14,6 +15,19 @@
             return $suma;
         }
 
+        private function MostrarUltimoTotal(){
+            $conexion  = new Conexion();
+            $consulta = mysqli_query($conexion->EstablecerConexion(),"SELECT cantidad FROM totales ORDER BY fechatotal DESC LIMIT 1");
+            $resultados = mysqli_fetch_assoc($consulta);
+            return $resultados;
+        }
+
+        public function TotalAModificar(){
+            $Total = $this->SumaGastos() - $this->MostrarUltimoTotal()['cantidad'];
+            echo $Total;
+            $conexion = new Conexion();
+            $conexion->EstablecerConexion()->query("UPDATE totales SET cantidad = '$Total', estado = 'Cuadrado'");
+        }
         
     }
     
