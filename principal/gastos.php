@@ -6,7 +6,9 @@ if (isset($_SESSION['usuario'])) {
     require_once '../clases/ConsultarTotales.php';
 ?>
     <div class="container-fluid">
-    <center><h1><i>Gastos</i></h1></center>
+        <center>
+            <h1><i>Gastos</i></h1>
+        </center>
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4 col-lg-4 shadow p-3 mb-5 bg-body rounded">
                 <form action="gastos.php" method="post">
@@ -31,6 +33,9 @@ if (isset($_SESSION['usuario'])) {
                             <th>
                                 <center>Total</center>
                             </th>
+                            <th>
+                                <center>Acciones</center>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,6 +55,11 @@ if (isset($_SESSION['usuario'])) {
                                 <td>
                                     <center><?= $rows['fechatotal']; ?></center>
                                 </td>
+                                <td><center>
+                                    <form action="../PuertaTrasera/ProcesoEliminarTotalSinCuadre.php?idTotal=<?= $rows['idtotal']; ?>" method="post"><?php //Enviando Datos por metodo Get el id del total para eliminar el total en la clase EliminarTotal, usando el ProcesoEliminarTotalSinCuadre?>
+                                    <button class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                    </form>
+                                </center></td>
                             </tr>
                         <?php
                         endwhile;
@@ -58,6 +68,12 @@ if (isset($_SESSION['usuario'])) {
                 </table>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-4"></div>
+
+            <?php
+            $fijos = $_POST['fijos'];
+            $variables = $_POST['variables'];
+            
+            ?>
         </div>
     </div>
 
