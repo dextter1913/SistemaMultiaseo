@@ -41,7 +41,7 @@ if (isset($_SESSION['usuario'])) {
             </form>
             <?php
             session_start();
-            echo $_SESSION['mensaje'];//Mostrando mensaje Total Ingresado, Recuerde Cuadrar Caja guardado en la sesion en ProcesoAgregarTotal
+            echo $_SESSION['mensaje']; //Mostrando mensaje Total Ingresado, Recuerde Cuadrar Caja guardado en la sesion en ProcesoAgregarTotal
             unset($_SESSION['mensaje']);
             if (isset($_POST['btnbuscarventas'])) {
             ?>
@@ -161,25 +161,25 @@ if (isset($_SESSION['usuario'])) {
                                                 require("../conexiones/SelectModVentas.php");
                                                 $registros2 = $registros;
                                                 while ($suma = mysqli_fetch_array($registros2)) {
-                                                    $precioProd = $precioProd + $suma['precioProd'];
+                                                    $precioProd = $precioProd + $suma['cantidad'] * $suma['precioProd'];
                                                 }
-                                                echo "$" . $precioProd; ?> </td>
+                                                echo "COP $" . number_format($precioProd); ?> </td>
                                             <td></td>
                                             <td><?php
                                                 require("../conexiones/SelectModVentas.php");
                                                 $registros3 = $registros;
                                                 while ($suma = mysqli_fetch_array($registros3)) {
-                                                    $recventa = $recventa + $suma['precioVenta'];
+                                                    $recventa = $recventa +  $suma['cantidad'] * $suma['precioVenta'];
                                                 }
-                                                echo '$' . $recventa; ?> </td>
+                                                echo ' COP $' . number_format($recventa); ?> </td>
                                             <td></td>
                                             <td>
                                                 <?php $totalGanacias = $recventa - $precioProd;
-                                                echo '$' . $totalGanacias . '</br>'; ?>
+                                                echo ' COP $' . number_format($totalGanacias) . '</br>'; ?>
                                             </td>
                                             <td>
                                                 <center>
-                                                    <form action="../PuertaTrasera/ProcesoAgregarTotal.php?totalGanancias=<?=$totalGanacias;?>" method="post">
+                                                    <form action="../PuertaTrasera/ProcesoAgregarTotal.php?totalGanancias=<?= $totalGanacias; ?>" method="post">
                                                         <button class="btn btn-outline-primary btn-sm"><i class="fas fa-plus-circle"></i></button>
                                                     </form>
                                                 </center>

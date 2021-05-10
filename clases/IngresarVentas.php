@@ -33,7 +33,7 @@ class IngresarVentas
         $conexion = new Conexion();
         $conexion->EstablecerConexion()->query("INSERT INTO venta(fechaventa, cantidad, totalV, Estadoventa, cliente, producto, Factura) 
         VALUES('$_fecVenta','$_cantidadU','$_Total','$_EstadoVenta','$_id','$_idprod','$_idfactura')");
-        echo "Venta ingresada, Total: " . $_Total . "<br>";
+        echo "Venta ingresada, Total: " . number_format($_Total) . "<br>";
         echo "el Numero de Factura es: <b>" . $_idfactura . "</b>";
         $conexion->__destruct();
     }

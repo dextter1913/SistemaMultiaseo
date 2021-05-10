@@ -62,7 +62,7 @@ if (isset($_SESSION['usuario'])) {
                         ?>
                             <tr>
                                 <td>
-                                    <center><?= $rows['cantidad']; ?></center>
+                                    <center><?= number_format($rows['cantidad']); ?></center>
                                 </td>
                                 <td>
                                     <center><?= $rows['estado']; ?></center>
@@ -113,7 +113,7 @@ if (isset($_SESSION['usuario'])) {
                         ?>
                             <tr>
                                 <td>
-                                    <center><?= $rows['cantidad']; ?></center>
+                                    <center><?= number_format($rows['cantidad']); ?></center>
                                 </td>
                                 <td>
                                     <center><?= $rows['estado']; ?></center>
