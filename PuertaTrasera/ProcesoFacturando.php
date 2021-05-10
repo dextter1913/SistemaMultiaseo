@@ -4,5 +4,5 @@ if (isset($_POST['btnModificarEstadoVenta'])) {
     $CambiarEstadoVenta = new CambiarEstadoVenta($_POST['EstadoVenta'], $_POST['IdVenta']);
     $CambiarEstadoVenta->CambiarEstadoVenta();
     $criterio = $_GET['criterio'];
-    header("Location:../principal/submenu/Facturas.php?criterio=$criterio");
+    header("Location:../buscar-factura/Facturas?criterio=$criterio");
 }

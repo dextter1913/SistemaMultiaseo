@@ -1,5 +1,5 @@
 <?php
-include '../../conexiones/abrir.php';
+include '../conexiones/abrir.php';
 ?>
 
 <?php
@@ -41,7 +41,7 @@ class PDF extends FPDF
 }
 $_fechaini = $_POST['fechaini'];
 $_fechafinal = $_POST['fechafin'];
-require("../../conexiones/SelectModVentas.php");
+require("../conexiones/SelectModVentas.php");
 $resultado = $registros;
 
 $pdf = new PDF();
@@ -55,7 +55,7 @@ while ($row = mysqli_fetch_array($resultado)) {
     $pdf->Cell(47, 10, utf8_decode($row['precioVenta']), 1, 0, 'C', 0);
     $pdf->Cell(47, 10, utf8_decode($row['nomCategoria']), 1, 1, 'C', 0);
 }
-require("../../conexiones/SelectModVentas.php");
+require("../conexiones/SelectModVentas.php");
 $registros3 = $registros;
 while ($suma = mysqli_fetch_array($registros3)) {
     $recventa = $recventa + $suma['precioVenta'];

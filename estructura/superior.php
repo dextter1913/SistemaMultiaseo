@@ -17,7 +17,7 @@
         <div class="shadow-lg p-3 mb-5 bg-body rounded">
             <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="app.php"><span class="fab fa-battle-net"><i> Atlaz</i></span>
+                    <a class="navbar-brand" href="../app"><span class="fab fa-battle-net"><i> Atlaz</i></span>
                         <?php
                         echo $_SESSION['usuario'];
                         ?>
@@ -28,28 +28,28 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link " aria-current="page" href="app.php">Inicio</a>
+                                <a class="nav-link " aria-current="page" href="../app">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="registro.php">Registro</a>
+                                <a class="nav-link" href="../registro">Registro</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="ventas.php">Ventas</a>
+                                <a class="nav-link" href="../ventas">Ventas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="buscar-factura.php">Buscar Factura</a>
+                                <a class="nav-link" href="../buscar-factura/">Buscar Factura</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="consulta.php">Consulta</a>
+                                <a class="nav-link" href="../consulta/">Consulta</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="zonas.php">Zonas</a>
+                                <a class="nav-link" href="../zonas/">Zonas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="gastos.php">Gastos</a>
+                                <a class="nav-link" href="../gastos/">Gastos</a>
                             </li>
                         </ul>
-                        <form action="../principal/busqueda.php" method="GET" class="d-flex">
+                        <form action="../busqueda/" method="GET" class="d-flex">
                             <input class="form-control me-2" name="id" type="search" placeholder="Ingrese ID" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit" name="btnbuscarr"><i class="fas fa-search"></i> </button>
                         </form>

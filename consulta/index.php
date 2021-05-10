@@ -6,7 +6,7 @@ if (isset($_SESSION['usuario'])) {
     require_once '../clases/Conexion.php';
 ?>
 
-    <form action="consulta.php" method="post">
+    <form action="../consulta/" method="post">
         <div class="container-fluid">
             <center>
                 <h1><i>Busqueda de Productos</i></h1>

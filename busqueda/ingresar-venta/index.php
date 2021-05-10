@@ -13,7 +13,7 @@ require_once '../../conexiones/abrir.php';
         <div class="col-md-1 col-lg-2"></div>
         <div class="col-12 col-sm-6 col-md-3 col-lg-3">
             <div class="shadow p-3 mb-5 bg-body rounded">
-                <form action="ingresar-venta.php?id=<?php echo $_GET['id']; ?>&idfactura=<?php echo $_GET['idfactura']; ?>" method="post">
+                <form action="../ingresar-venta/?id=<?php echo $_GET['id']; ?>&idfactura=<?php echo $_GET['idfactura']; ?>" method="post">
                     <label for="NombreProducto">Ingrese Nombre del Producto:</label>
                     <input type="text" name="nombreproducto" id="NombreProducto" class="form-control" placeholder="Buscar"><br>
                     <input type="submit" value="Buscar" class="btn btn-outline-primary" name="btnBuscarProductoV">
@@ -56,7 +56,7 @@ require_once '../../conexiones/abrir.php';
                     </table>
                 </div>
                 <br>
-                <form action="ingresar-venta.php?id=<?php echo $_GET['id']; ?>&idfactura=<?php echo $_GET['idfactura']; ?>" method="post">
+                <form action="../ingresar-venta/?id=<?php echo $_GET['id']; ?>&idfactura=<?php echo $_GET['idfactura']; ?>" method="post">
                     <?php require_once '../../estructura/ModalIngresarVenta.php'; //formulario ingresar venta
                     ?>
                     <input type="submit" value="Ingresar Venta" class="btn btn-outline-primary" name="btningresarVenta">
@@ -74,7 +74,7 @@ require_once '../../conexiones/abrir.php';
                 $IngresarVenta = new IngresarVentas($_POST['fechaventa'], $_POST['CantidadUnidad'], $_Total, $_POST['EstadoVenta'], $_GET['id'], $_POST['idprod'], $_GET['idfactura']); // enviando parametros por metodo post al objeto insertar venta
                 $IngresarVenta->InsertandoVenta(); //llamando el objeto insertar venta
             ?>
-                <form action="Facturas.php?criterio2=<?php echo $_idfactura; ?>" method="post">
+                <form action="../../buscar-factura/Facturas?criterio2=<?php echo $_GET['idfactura']; ?>" method="post">
                     <button type="submit" class="btn btn-outline-danger"><i class="fas fa-wallet"></i></button>
                 </form>
             <?php

@@ -16,7 +16,7 @@
                     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
                             <div class="shadow p-3 mb-5 bg-body rounded">
-                                <form action="registro.php" method="post">
+                                <form action="../registro/" method="post">
                                     <div class="row">
                                         <div class="col-12 col-md-2">
                                             <label for="id">Documento</label>
@@ -100,7 +100,7 @@
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
                             <div class="shadow p-3 mb-5 bg-body rounded">
-                                <form action="registro.php" method="post">
+                                <form action="../registro/" method="post">
                                     <div class="row">
                                         <div class="col-12 col-md-3 col-lg-3">
                                             <label for="nombreN">Nombre producto</label>

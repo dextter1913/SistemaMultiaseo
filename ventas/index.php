@@ -9,7 +9,7 @@ if (isset($_SESSION['usuario'])) {
             <h1><i>Buscar Ventas Totales</i></h1>
         </center>
         <div class="shadow-sm p-3 mb-5 bg-body rounded}">
-            <form action="ventas.php" method="post">
+            <form action="../ventas/" method="post">
                 <div class="row">
                     <div class="col-12 col-md-3">
                         <label for="fechaini">Ingrese fecha Inicial</label>
