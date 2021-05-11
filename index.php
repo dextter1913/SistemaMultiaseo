@@ -20,7 +20,7 @@
         echo $_SESSION['Error'];
     }
     if (isset($_SESSION['usuario'])) {
-        header('Location:principal/app.php');
+        header('Location:app/');
     }
     ?>
     <br><br>

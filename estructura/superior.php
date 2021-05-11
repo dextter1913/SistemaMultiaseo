@@ -28,9 +28,6 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link " aria-current="page" href="../app">Inicio</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="../registro">Registro</a>
                             </li>
                             <li class="nav-item">
@@ -47,6 +44,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../gastos/">Gastos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../compras/">Compras</a>
                             </li>
                         </ul>
                         <form action="../busqueda/" method="GET" class="d-flex">
