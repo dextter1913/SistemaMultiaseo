@@ -23,8 +23,7 @@ require_once 'Conexion.php';
         }
 
         public function TotalAModificar(){
-            $Total = $this->SumaGastos() - $this->MostrarUltimoTotal()['cantidad'];
-            echo $Total;
+            $Total = $this->MostrarUltimoTotal()['cantidad'] - $this->SumaGastos();
             $conexion = new Conexion();
             $conexion->EstablecerConexion()->query("UPDATE totales SET cantidad = '$Total', estado = 'Cuadrado'");
         }
