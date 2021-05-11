@@ -3,7 +3,8 @@
     {
         
         public function Consultar(){
-            $consulta = "SELECT * FROM compras LIMIT 8 ORDER BY FechaCompra DESC";
+            $consulta = "SELECT * FROM compras ORDER BY FechaCompra DESC LIMIT 8";
+            return $consulta;
         }
     }
     
