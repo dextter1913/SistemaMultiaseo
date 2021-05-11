@@ -18,9 +18,8 @@ if (isset($_SESSION['usuario'])) {
             </div>
                 <div class="col-12 col-sm-10 col-md-10 col-lg-10 table-responsive">
             <?php if (isset($_POST['btninsertarfactura'])):
-                require_once '../clases/IngresarCompras.php';
-                $insertarCompras = new IngresarCompras($_POST['NumeroFactura'],$_POST['Prefijo'],$_POST['Cantidad'],$_POST['ValorUnitario'],$_POST['Total'],$_POST['Descripcion']);
-                $insertarCompras->IngresarCompras();
+                
+
                 ?>
                 <?php endif ?>
                     <table class="table table-hover shadow p-3 mb-5 bg-body rounded">
