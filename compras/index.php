@@ -16,37 +16,45 @@ if (isset($_SESSION['usuario'])) {
                     <?php require_once '../estructura/Modalingresarcompras.php'; ?>
                 </center>
             </div>
-            <div class="col-12 col-sm-10 col-md-10 col-lg-10 table-responsive">
-                <table class="table table-hover shadow p-3 mb-5 bg-body rounded">
-                    <thead>
-                        <tr>
-                            <th>
-                                <center>Prefijo</center>
-                            </th>
-                            <th>
-                                <center>Numero de Factura</center>
-                            </th>
-                            <th>
-                                <center>Cantidad Unitaria</center>
-                            </th>
-                            <th>
-                                <center>Valor Unitario</center>
-                            </th>
-                            <th>
-                                <center>Descripcion</center>
-                            </th>
-                            <th>
-                                <center>Total</center>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><center></center></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <div class="col-12 col-sm-10 col-md-10 col-lg-10 table-responsive">
+            <?php if (isset($_POST['btninsertarfactura'])):
+                require_once '../clases/IngresarCompras.php';
+                $insertarCompras = new IngresarCompras($_POST['NumeroFactura'],$_POST['Prefijo'],$_POST['Cantidad'],$_POST['ValorUnitario'],$_POST['Total'],$_POST['Descripcion']);
+                $insertarCompras->IngresarCompras();
+                ?>
+                <?php endif ?>
+                    <table class="table table-hover shadow p-3 mb-5 bg-body rounded">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <center>Prefijo</center>
+                                </th>
+                                <th>
+                                    <center>Numero de Factura</center>
+                                </th>
+                                <th>
+                                    <center>Cantidad Unitaria</center>
+                                </th>
+                                <th>
+                                    <center>Valor Unitario</center>
+                                </th>
+                                <th>
+                                    <center>Descripcion</center>
+                                </th>
+                                <th>
+                                    <center>Total</center>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <center></center>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
         </div>
     </div>
 

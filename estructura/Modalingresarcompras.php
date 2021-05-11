@@ -10,16 +10,16 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12 col-sm-6 col-md-2 col-lg-2">
-                                <label for="Prefijos">Prefijo</label>
-                                <input type="text" name="Prefijos" id="Prefijos" class="form-control" placeholder="Az">
+                                <label for="Prefijo">Prefijo</label>
+                                <input type="text" name="Prefijo" id="Prefijo" class="form-control" placeholder="Az"><br/>
                                 <label for="Cantidad">Cantidad</label>
                                 <input type="number" name="Cantidad" id="Cantidad" placeholder="Cantidad" class="form-control">
                             </div>
                             <div class="col-12 col-sm-6 col-md-4 col-lg-4">
                                 <label for="NumeroFactura">Numero Factura</label>
-                                <input type="number" name="NumeroFactura" id="NumeroFactura" class="form-control" placeholder="Ingrese Numero">
+                                <input type="number" name="NumeroFactura" id="NumeroFactura" class="form-control" placeholder="Ingrese Numero"><br/>
                                 <label for="ValorUnitario">Valor Unitario</label>
-                                <input type="number" name="ValorUnitario" id="ValorUnitario" class="form-control" placeholder="Valor">
+                                <input type="number" name="ValorUnitario" id="ValorUnitario" class="form-control" placeholder="Valor"><br/>
                                 <label for="Total">Total</label>
                                 <input type="number" name="Total" id="Total" class="form-control" placeholder="Total">
                             </div>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-outline-success" name="btninsertarfactura">Guardar</button>
+                    <button type="submit" class="btn btn-outline-success" name="btninsertarfactura">Guardar</button>
                 </div>
             </form>
         </div>

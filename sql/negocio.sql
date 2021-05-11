@@ -123,3 +123,12 @@ CREATE TABLE totales(
     estado VARCHAR (25) NOT NULL,
     fechatotal DATETIME
   );
+
+  CREATE TABLE compras(
+    NumeroFactura INTEGER NOT NULL PRIMARY KEY,
+    Prefijo VARCHAR (10) NOT NULL,
+    Cantidad INTEGER NOT NULL,
+    ValorUnitario INTEGER NOT NULL,
+    Total INTEGER NOT NULL,
+    Descripcion VARCHAR (255) NOT NULL
+  );
