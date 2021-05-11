@@ -17,11 +17,6 @@ if (isset($_SESSION['usuario'])) {
                 </center>
             </div>
                 <div class="col-12 col-sm-10 col-md-10 col-lg-10 table-responsive">
-            <?php if (isset($_POST['btninsertarfactura'])):
-                
-
-                ?>
-                <?php endif ?>
                     <table class="table table-hover shadow p-3 mb-5 bg-body rounded">
                         <thead>
                             <tr>
@@ -46,6 +41,10 @@ if (isset($_SESSION['usuario'])) {
                             </tr>
                         </thead>
                         <tbody>
+                        <?php
+                            
+
+                        ?>
                             <tr>
                                 <td>
                                     <center></center>

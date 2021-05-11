@@ -14,6 +14,8 @@
                                 <input type="text" name="Prefijo" id="Prefijo" class="form-control" placeholder="Az"><br/>
                                 <label for="Cantidad">Cantidad</label>
                                 <input type="number" name="Cantidad" id="Cantidad" placeholder="Cantidad" class="form-control">
+                                <label for="FechaCompra">Fecha Compra</label>
+                                <input type="date" name="FechaCompra" id="FechaCompra" class="form-control">
                             </div>
                             <div class="col-12 col-sm-6 col-md-4 col-lg-4">
                                 <label for="NumeroFactura">Numero Factura</label>

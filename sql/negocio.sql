@@ -129,6 +129,7 @@ CREATE TABLE totales(
     Prefijo VARCHAR (10) NOT NULL,
     Cantidad INTEGER NOT NULL,
     ValorUnitario INTEGER NOT NULL,
+    FechaCompra DATE NOT NULL,
     Total INTEGER NOT NULL,
     Descripcion VARCHAR (255) NOT NULL
   );
