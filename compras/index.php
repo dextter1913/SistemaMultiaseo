@@ -10,7 +10,8 @@ if (isset($_SESSION['usuario'])) {
         <div class="row shadow-lg p-3 mb-5 bg-body rounded">
             <div class="col-12 col-sm-2 col-md-2 col-lg-2">
                 <center>
-                    <button type="button" class="btn btn-outline-secondary btn-lg" data-bs-toggle="modal" name="FormulariIngresarCompra" data-bs-target="#exampleModal">
+                <label for="Agregar">Agregar Factura</label><br/><br/>
+                    <button type="button" id="Agregar" class="btn btn-outline-secondary btn-lg" data-bs-toggle="modal" name="FormulariIngresarCompra" data-bs-target="#exampleModal">
                         <i class="fas fa-plus"></i>
                     </button>
                     <?php

@@ -15,7 +15,9 @@
                                 <label for="Cantidad">Cantidad</label>
                                 <input type="number" name="Cantidad" id="Cantidad" placeholder="Cantidad" class="form-control">
                                 <label for="FechaCompra">Fecha Compra</label>
-                                <input type="date" name="FechaCompra" id="FechaCompra" class="form-control">
+                                <input type="date" name="FechaCompra" id="FechaCompra" class="form-control"><br/><br/>
+                                <label for="idtotal">ID del total Cuadrado</label>
+                                <input type="number" name="idtotal" id="idtotal" class="form-control" placeholder="1-9">
                             </div>
                             <div class="col-12 col-sm-6 col-md-4 col-lg-4">
                                 <label for="NumeroFactura">Numero Factura</label>

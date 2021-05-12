@@ -7,7 +7,7 @@
             
         }
         public function ConsultaConCuadre(){
-            $query = "SELECT * FROM totales WHERE estado = 'Cuadrado' ORDER BY fechatotal DESC LIMIT 5";
+            $query = "SELECT * FROM totales WHERE estado = 'Cuadrado' OR estado = 'Cuadrado OK' ORDER BY fechatotal DESC LIMIT 5";
             return $query;
             
         }
