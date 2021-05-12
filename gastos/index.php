@@ -18,6 +18,8 @@ if (isset($_SESSION['usuario'])) {
                     <h6><i>Gastos que se requieren descontar</i></h6>
                 </center>
                 <form action="../gastos/" method="post">
+                    <label for="idtotal">Ingrese ID</label>
+                    <input type="number" name="idtotal" id="idtotal" placeholder="Ingrese ID del total" title="idtotal" class="form-control"><br/>
                     <label for="fijos">Gastos Fijos</label>
                     <input type="number" name="fijos" id="fijos" placeholder="Ingrese Gastos fijos" title="Gastos fijos" class="form-control"></br>
                     <label for="variables">Gastos Variables</label>
@@ -27,7 +29,7 @@ if (isset($_SESSION['usuario'])) {
                 </form>
                 <?php
                 if (isset($_POST['fijos']) && isset($_POST['variables'])) {
-                    $cuadrecaja = new CuadreCaja($_POST['fijos'], $_POST['variables']);
+                    $cuadrecaja = new CuadreCaja($_POST['idtotal'],$_POST['fijos'], $_POST['variables']);
                     $cuadrecaja->TotalAModificar();
                 }
 
@@ -41,6 +43,9 @@ if (isset($_SESSION['usuario'])) {
                 <table class="table table-hover shadow p-3 mb-5 bg-body rounded">
                     <thead>
                         <tr>
+                            <th>
+                                <center>ID</center>
+                            </th>
                             <th>
                                 <center>Cantidad</center>
                             </th>
@@ -61,6 +66,9 @@ if (isset($_SESSION['usuario'])) {
                         while ($rows = mysqli_fetch_array($resultado)) :
                         ?>
                             <tr>
+                                <td>
+                                    <center><?= $rows['idtotal']; ?></center>
+                                </td>
                                 <td>
                                     <center><?= number_format($rows['cantidad']); ?></center>
                                 </td>
@@ -93,6 +101,9 @@ if (isset($_SESSION['usuario'])) {
                     <thead>
                         <tr>
                             <th>
+                                <center>ID</center>
+                            </th>
+                            <th>
                                 <center>Cantidad</center>
                             </th>
                             <th>
@@ -112,6 +123,9 @@ if (isset($_SESSION['usuario'])) {
                         while ($rows = mysqli_fetch_array($resultado)) :
                         ?>
                             <tr>
+                                <td>
+                                    <center><?= $rows['idtotal']; ?></center>
+                                </td>
                                 <td>
                                     <center><?= number_format($rows['cantidad']); ?></center>
                                 </td>
