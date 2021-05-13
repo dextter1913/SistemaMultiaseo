@@ -9,7 +9,7 @@ $criterio = $_GET['criterio'];
 $criterio2 = $_GET['criterio2'];
 require_once '../../conexiones/ConsultaFacturas.php';
 ?>
-<form action="../../PuertaTrasera/ProcesoFacturando.php?criterio=<?php echo $criterio; ?>" method="post">
+<form action="../../PuertaTrasera/ProcesoFacturando.php?criterio=<?php echo $criterio; ?>&criterio2=<?php echo $criterio2; ?>" method="post">
     <div class="container-fluid">
         <div class="row">
             <div class="col-1 col-md-1"></div>
@@ -95,7 +95,7 @@ require_once '../../conexiones/ConsultaFacturas.php';
                                         <label for="IdVneta">Ingrese ID</label>
                                     </td>
                                     <td>
-                                        <input type="text" name="IdVenta" class="form-control" id="IdVenta">
+                                        <input type="text" name="IdVenta" class="form-control" id="IdVenta" placeholder="Id venta">
                                     </td>
                                     <td>
                                         <select id="categoria" class="form-select" name="EstadoVenta">
@@ -104,6 +104,9 @@ require_once '../../conexiones/ConsultaFacturas.php';
                                             <option>Devuelto</option>
                                             <option>Anulado</option>
                                         </select>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="Precio" title="Nuevo Precio" placeholder="Ingrese Nuevo Precio" class="form-control">
                                     </td>
                                     <td><button type="submit" class="btn btn-outline-primary btn-lg" name="btnModificarEstadoVenta"><i class="far fa-save"></i></button></td>
                                 </tr>
