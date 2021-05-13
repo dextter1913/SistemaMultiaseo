@@ -71,6 +71,10 @@ require_once '../../clases/Conexion.php';
                 require_once '../../clases/IngresarVentas.php'; //importando clase IngresarVenta
                 $IngresarVenta = new IngresarVentas($_POST['fechaventa'], $_POST['CantidadUnidad'], $_Total, $_POST['EstadoVenta'], $_GET['id'], $_POST['idprod'], $_GET['idfactura']); // enviando parametros por metodo post al objeto insertar venta
                 $IngresarVenta->InsertandoVenta(); //llamando el objeto insertar venta
+                //Modificando el Stock
+                require_once '../../clases/ModificarStock.php';
+                $ModificarStock = new ModificarStock($_POST['idprod'],$_POST['CantidadUnidad']);
+                $ModificarStock->MetodoModificarStock();
             ?>
                 <form action="../../buscar-factura/Facturas?criterio=<?php echo $_GET['idfactura']; ?>" method="post">
                     <button type="submit" class="btn btn-outline-danger"><i class="fas fa-wallet"></i></button>
