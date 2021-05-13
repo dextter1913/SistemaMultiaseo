@@ -5,4 +5,6 @@
     header('Location:../gastos/');
     $eliminar->EliminarTotalConCuadre();
     header('Location:../gastos/');
+    $eliminar->EliminarTotalConCuadreOK();
+    header('Location:../gastos/');
 ?>

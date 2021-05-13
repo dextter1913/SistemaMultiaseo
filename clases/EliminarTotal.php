@@ -17,6 +17,11 @@ require_once '../clases/Conexion.php';
             $conexion = new Conexion();
             $conexion->EstablecerConexion()->query("DELETE FROM totales WHERE idtotal= '$id' AND estado = 'Cuadrado'");
         }
+        public function EliminarTotalConCuadreOK(){
+            $id = $this->id;
+            $conexion = new Conexion();
+            $conexion->EstablecerConexion()->query("DELETE FROM totales WHERE idtotal= '$id' AND estado = 'Cuadrado OK'");
+        }
     }
     
 
