@@ -119,7 +119,7 @@ if (isset($_SESSION['usuario'])) {
             </div>
         </div>
     </form>
-    <a href="./Colilla/?criterio=<?= $criterio; ?>" target="_blank"><button class="btn btn-outline-danger btn-sm"><i class="far fa-file-pdf"></i></button></a>
+    <a href="./Colilla/?criterio=<?= $criterio; ?>&Factura= <?= $rows['fechaFactura'];?>" target="_blank"><button class="btn btn-outline-danger btn-sm"><i class="far fa-file-pdf"></i></button></a>
 <?php
 
 

@@ -23,7 +23,7 @@ class PDF extends FPDF
         //$this->Cell(47, 10, utf8_decode('id'), 1, 0, 'C', 0);
         $this->Cell(1, 5, utf8_decode('Producto'), 0, 0, 'C', 0);
         $this->Cell(35, 5, utf8_decode('Cantidad'), 0, 0, 'C', 0);
-        $this->Cell(1, 5, utf8_decode('Valor'), 0, 0, 'C', 0);
+        $this->Cell(1, 5, utf8_decode('Valor'), 0, 1, 'C', 0);
     }
 
     // Pie de página
@@ -39,7 +39,7 @@ class PDF extends FPDF
 }
 
 
-$pdf = new PDF("P","mm",array(58,150));
+$pdf = new PDF("P","mm",array(58,150));//
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Arial','',8);//Modificar tipo de letra y tamaño del cuerpo
@@ -51,8 +51,8 @@ $resultados = mysqli_query($conexion->EstablecerConexion(),$ConsultarFacturas->c
 
 while ($row = mysqli_fetch_array($resultados)) {
     //$pdf->Cell(47, 10, utf8_decode($row['idventa']), 1, 0, 'C', 0);
-    $pdf->Cell(-70, 15, utf8_decode($row['nomProd']), 0, 0, 'C', 0);
-    $pdf->Cell(100, 15, utf8_decode($row['cantidad']), 0, 0, 'C', 0);
-    $pdf->Cell(-61, 15, utf8_decode($row['totalV']), 0, 0, 'C', 0);
+    $pdf->Cell(1, 5, utf8_decode($row['nomProd']), 0, 0, 'C', 0);
+    $pdf->Cell(35, 5, utf8_decode($row['cantidad']), 0, 0, 'C', 0);
+    $pdf->Cell(1, 5, utf8_decode($row['totalV']), 0, 1, 'C', 0);
 }
 $pdf->Output();
