@@ -17,7 +17,7 @@ class PDF extends FPDF
         // Movernos a la derecha
         $this->Cell(12);
         // Título
-        $this->Cell(15, 10, utf8_decode('Reporte de Ventas Factura N '.$_GET['criterio']), 0, 0, 'C');
+        $this->Cell(15, 10, utf8_decode('MultiAseo Factura N '.$_GET['criterio']), 0, 0, 'C');
         // Salto de línea
         $this->Ln(20);
         //$this->Cell(47, 10, utf8_decode('id'), 1, 0, 'C', 0);
@@ -55,4 +55,11 @@ while ($row = mysqli_fetch_array($resultados)) {
     $pdf->Cell(35, 5, utf8_decode($row['cantidad']), 0, 0, 'C', 0);
     $pdf->Cell(1, 5, utf8_decode($row['totalV']), 0, 1, 'C', 0);
 }
+$resultados2 = mysqli_query($conexion->EstablecerConexion(),$ConsultarFacturas->consulta());
+while ($row = mysqli_fetch_array($resultados2)) {
+    $total = $total + $row['totalV'];
+}
+$iva = $total * 0.19;
+$pdf->Cell(1, 30, utf8_decode('IVA  ').number_format($iva), 0, 0, 'C', 0);
+$pdf->Cell(70, 30, utf8_decode('Total ').number_format($total), 0, 1, 'C', 0);
 $pdf->Output();
