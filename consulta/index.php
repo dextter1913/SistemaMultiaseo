@@ -30,7 +30,7 @@ if (isset($_SESSION['usuario'])) {
                 if (isset($_POST['btnBuscarProductos'])) {
                     $consulta = new ConsultarProducto($_POST['producto']);
                     $conexion = new Conexion();
-                    $total = mysqli_query($conexion->EstablecerConexion(), $consulta->QuerySeleccionarProducto())
+                    $total = mysqli_query($conexion->EstablecerConexion(), $consulta->QuerySeleccionarProducto());
                 ?>
                     <table class="table table-hover shadow p-3 mb-5 bg-body rounded">
                         <thead>

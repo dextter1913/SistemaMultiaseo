@@ -6,10 +6,9 @@ if (isset($_SESSION['usuario'])) {
 ?>
     <?php
     $criterio = $_GET['criterio'];
-    $criterio2 = $_GET['criterio2'];
     require_once '../../conexiones/ConsultaFacturas.php';
     ?>
-    <form action="../../PuertaTrasera/ProcesoFacturando.php?criterio=<?php echo $criterio; ?>&criterio2=<?php echo $criterio2; ?>" method="post">
+    <form action="../../PuertaTrasera/ProcesoFacturando.php?criterio=<?php echo $criterio; ?>" method="post">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-1 col-md-1"></div>
@@ -119,7 +118,9 @@ if (isset($_SESSION['usuario'])) {
             </div>
         </div>
     </form>
-    <a href="./Colilla/?criterio=<?= $criterio; ?>&Factura= <?= $rows['fechaFactura'];?>" target="_blank"><button class="btn btn-outline-danger btn-sm"><i class="far fa-file-pdf"></i></button></a>
+    <center>
+        <a href="./Colilla/?criterio=<?= $criterio; ?>&Factura= <?= $rows['fechaFactura']; ?>" target="_blank"><button class="btn btn-outline-danger btn-sm"><i class="far fa-file-pdf"></i></button></a>
+    </center>
 <?php
 
 

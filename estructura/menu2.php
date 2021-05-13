@@ -48,6 +48,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="../../gastos/">Gastos</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../../compras/">Compras</a>
+              </li>
             </ul>
             <form action="../../busqueda/" method="post" class="d-flex">
               <input class="form-control me-2" name="id" type="search" placeholder="Ingrese ID" aria-label="Search">

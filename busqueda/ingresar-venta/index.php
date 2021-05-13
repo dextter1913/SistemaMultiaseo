@@ -2,7 +2,9 @@
 session_start();
 if (isset($_SESSION['usuario'])) {
 include("../../estructura/menu2.php");
-require_once '../../conexiones/abrir.php';
+//require_once '../../conexiones/abrir.php';
+require_once '../../clases/ConsultarProducto.php';
+require_once '../../clases/Conexion.php';
 
 ?>
 <div class="container-fluid">
@@ -35,20 +37,16 @@ require_once '../../conexiones/abrir.php';
                         <tbody>
                             <?php
                             if (isset($_POST['btnBuscarProductoV'])) {
-                                $_id = $_POST['nombreproducto'];
-                                $consulta = mysqli_query($conexion, "SELECT * FROM  productos WHERE idProd = '$_id' OR nomProd LIKE '$_id%'");
-                                while ($row = mysqli_fetch_array($consulta)) {
-                                    //require_once '../../clases/SeleccionarProducto.php';
-                                    //require_once '../../clases/BuscarProducto.php';
-                                    //$ConsultarProducto = new BuscarProducto();
-                                    //$seleccionarproducto = new SeleccionarProducto($_POST['nombreproducto']);
-                                    //while ($ConsultarProducto->ConsultarProducto()) {
+                                $consulta = new ConsultarProducto($_POST['nombreproducto']);
+                                $conexion = new Conexion();
+                                $total = mysqli_query($conexion->EstablecerConexion(), $consulta->QuerySeleccionarProducto());
+                                while ($resultado = mysqli_fetch_array($total)) {
                             ?>
                                     <tr>
-                                        <td><?php echo $row['idProd']; ?></td>
-                                        <td><?php echo $row['nomProd']; ?></td>
-                                        <td><?php echo $row['precioVenta']; ?></td>
-                                        <td><?php echo $row['categoria']; ?></td>
+                                        <td><?php echo $resultado['idProd']; ?></td>
+                                        <td><?php echo $resultado['nomProd']; ?></td>
+                                        <td><?php echo $resultado['precioVenta']; ?></td>
+                                        <td><?php echo $resultado['nomCategoria']; ?></td>
                                     </tr>
                             <?php }
                             } ?>
@@ -74,7 +72,7 @@ require_once '../../conexiones/abrir.php';
                 $IngresarVenta = new IngresarVentas($_POST['fechaventa'], $_POST['CantidadUnidad'], $_Total, $_POST['EstadoVenta'], $_GET['id'], $_POST['idprod'], $_GET['idfactura']); // enviando parametros por metodo post al objeto insertar venta
                 $IngresarVenta->InsertandoVenta(); //llamando el objeto insertar venta
             ?>
-                <form action="../../buscar-factura/Facturas?criterio2=<?php echo $_GET['idfactura']; ?>" method="post">
+                <form action="../../buscar-factura/Facturas?criterio=<?php echo $_GET['idfactura']; ?>" method="post">
                     <button type="submit" class="btn btn-outline-danger"><i class="fas fa-wallet"></i></button>
                 </form>
             <?php
