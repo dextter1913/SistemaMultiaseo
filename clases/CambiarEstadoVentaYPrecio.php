@@ -22,9 +22,9 @@ class CambiarEstadoVentaYPrecio
     }
     public function CambiarPrecioVenta(){
         $_idventa = $this->IdVenta;
-        $_EstadoVenta = $this->_EstadoVenta;
+        //$_EstadoVenta = $this->_EstadoVenta;
         $Precio = $this->Precio;
-        echo "<center>Se modifico con Exito $_idventa, $_EstadoVenta </center>";
+        echo "<center>Se modifico con Exito $_idventa</center>";
         $conexion = new Conexion();
         $conexion->EstablecerConexion()->query("UPDATE venta  SET totalV ='$Precio' WHERE idventa = '$_idventa'");
     }
