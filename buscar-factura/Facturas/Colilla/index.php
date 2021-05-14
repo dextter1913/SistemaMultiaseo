@@ -61,8 +61,8 @@ $resultados2 = mysqli_query($conexion->EstablecerConexion(),$ConsultarFacturas->
 while ($row = mysqli_fetch_array($resultados2)) {
     $total = $total + $row['totalV'];
 }
-$iva = $total * 0.19;
-$pdf->Cell(1, 30, utf8_decode('IVA  ').number_format($iva), 0, 0, 'C', 0);
+//$iva = $total * 0.19;
+//$pdf->Cell(1, 30, utf8_decode('IVA  ').number_format($iva), 0, 0, 'C', 0);
 $pdf->Cell(70, 30, utf8_decode('Total ').number_format($total), 0, 1, 'C', 0);
 $pdf->Output();
 }else {

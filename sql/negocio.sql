@@ -136,3 +136,13 @@ CREATE TABLE totales(
     Total INTEGER NOT NULL,
     Descripcion VARCHAR (255) NOT NULL
   );
+
+  /*SELECT * FROM usuarios WHERE user = 'dextter1913' AND pass = '123' AND super = TRUE AND fechaInicioLicencia = '2021-05-11' AND fechaFinalLicencia <= '2021-05-14';
+
+
+
+
+
+
+UPDATE usuarios SET fechaInicioLicencia = CURDATE() WHERE user = 'dextter1913';
+SELECT * FROM usuarios WHERE user = 'dextter1913' AND pass = '123' AND super = TRUE AND fechaInicioLicencia <= fechaFinalLicencia;*/

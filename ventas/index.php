@@ -30,7 +30,7 @@ if (isset($_SESSION['usuario'])) {
                     </div>
                     <div class="col-12 col-md-3">
                         <label for="idCliente">Id Cliente</label>
-                        <input type="tel" name="idCliente" id="idCliente" class="form-control">
+                        <input type="tel" name="idCliente" id="idCliente" class="form-control" placeholder="Ingrese Id cliente">
                     </div>
                 </div><br>
                 <div class="row">

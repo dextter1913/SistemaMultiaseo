@@ -29,6 +29,9 @@ require_once 'Conexion.php';
             $idtotal = $this->idtotal;
             $Total = $this->MostrarUltimoTotal()['cantidad'] - $this->SumaGastos();
             $conexion = new Conexion();
+            $fijos = $this->fijos;
+            $variables = $this->variables;
+            $conexion->EstablecerConexion()->query("INSERT INTO gastos(fijos, variables, fechagasto) VALUES('$fijos','$variables',CURDATE())");
             $conexion->EstablecerConexion()->query("UPDATE totales SET cantidad = '$Total', estado = 'Cuadrado' WHERE idtotal = '$idtotal'");
         }
         
