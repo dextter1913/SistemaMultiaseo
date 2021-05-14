@@ -1,9 +1,13 @@
 <?php
 require_once '../clases/validacionlogin.php';
+require_once '../clases/InsertarLog.php';
 $resultado = new validacionlogin($_POST['usuario'], $_POST['contraseña']);
 if ($resultado->GuardandoConsultaValidarUsuario()) {
     session_start();
     $_SESSION['usuario'] = $_POST['usuario'];
+
+    $insertarlog = new InsertarLog($_POST['usuario']);//objeto para ingresar rastro de logeo
+    $insertarlog->IngresarRastroLogeo();
     header("Location:../app");//Validaciones adicionales al momento de ingresar datos erroneos
 } elseif ($_POST['usuario'] == "" && $_POST['contraseña'] == "" || $_POST['usuario'] == " " || $_POST['contraseña'] == " ") {
     session_start();

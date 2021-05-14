@@ -9,8 +9,20 @@ CREATE TABLE usuarios(
   fechaFinalLicencia DATE NOT NULL
 );
 INSERT INTO
-  usuarios(user, pass, super, fechaInicioLicencia, fechaFinalLicencia)
-VALUES("dextter1913", "123",TRUE,'2021-05-11','2021-05-14'),("admin", "123",TRUE,'2021-05-11','2021-05-14');
+  usuarios(
+    user,
+    pass,
+    super,
+    fechaInicioLicencia,
+    fechaFinalLicencia
+  )
+VALUES(
+    "dextter1913",
+    "123",
+    TRUE,
+    '2021-05-11',
+    '2021-05-14'
+  ),("admin", "123", TRUE, '2021-05-11', '2021-05-14');
 CREATE TABLE empleados(
     idEmp VARCHAR (20) PRIMARY KEY NOT NULL,
     nombreEmp VARCHAR (50) NOT NULL,
@@ -126,8 +138,7 @@ CREATE TABLE totales(
     estado VARCHAR (25) NOT NULL,
     fechatotal DATETIME
   );
-
-  CREATE TABLE compras(
+CREATE TABLE compras(
     NumeroFactura INTEGER NOT NULL PRIMARY KEY,
     Prefijo VARCHAR (10) NOT NULL,
     Cantidad INTEGER NOT NULL,
@@ -136,13 +147,20 @@ CREATE TABLE totales(
     Total INTEGER NOT NULL,
     Descripcion VARCHAR (255) NOT NULL
   );
-
+CREATE TABLE logs(
+    idlog INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    HoraLogeo DATE,
+    FechaLogeo TIME,
+    user VARCHAR (50) NOT NULL,
+    index(user),
+    FOREIGN KEY (user) REFERENCES usuarios(user)
+  );
   /*SELECT * FROM usuarios WHERE user = 'dextter1913' AND pass = '123' AND super = TRUE AND fechaInicioLicencia = '2021-05-11' AND fechaFinalLicencia <= '2021-05-14';
-
-
-
-
-
-
-UPDATE usuarios SET fechaInicioLicencia = CURDATE() WHERE user = 'dextter1913';
-SELECT * FROM usuarios WHERE user = 'dextter1913' AND pass = '123' AND super = TRUE AND fechaInicioLicencia <= fechaFinalLicencia;*/
+  
+  
+  
+  
+  
+  
+  UPDATE usuarios SET fechaInicioLicencia = CURDATE() WHERE user = 'dextter1913';
+  SELECT * FROM usuarios WHERE user = 'dextter1913' AND pass = '123' AND super = TRUE AND fechaInicioLicencia <= fechaFinalLicencia;*/
