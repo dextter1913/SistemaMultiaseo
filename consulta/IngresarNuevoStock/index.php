@@ -109,7 +109,7 @@ if (isset($_SESSION['usuario'])) {
                         <?php endwhile; ?>
                     </tbody>
                     <tfoot>
-                        <form action="../../PuertaTrasera/" method="post">
+                        <form action="../../PuertaTrasera/ProcesoActualizarNuevoStock.php" method="post">
 
                             <tr>
                                 <td>

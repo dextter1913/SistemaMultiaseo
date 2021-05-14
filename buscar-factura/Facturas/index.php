@@ -93,7 +93,7 @@ if (isset($_SESSION['usuario'])) {
                                             <label for="IdVneta">Ingrese ID</label>
                                         </td>
                                         <td>
-                                            <input type="text" name="IdVenta" class="form-control" id="IdVenta" placeholder="Id venta">
+                                            <input type="text" name="IdVenta" class="form-control" id="IdVenta" placeholder="Id venta" required="required">
                                         </td>
                                         <td>
                                             <select id="categoria" class="form-select" name="EstadoVenta">
