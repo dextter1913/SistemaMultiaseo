@@ -64,11 +64,11 @@ if (isset($_SESSION['usuario'])) {
 
                         ?>
                             <tr>
-                                <td>
+                                <th>
                                     <center>
                                         <?= $rows['idProd']; ?>
                                     </center>
-                                </td>
+                                </th>
                                 <td>
                                     <center>
                                         <?= $rows['nomProd']; ?>
