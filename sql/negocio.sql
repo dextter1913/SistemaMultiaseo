@@ -3,11 +3,14 @@ CREATE DATABASE multiaseo;
 USE multiaseo;
 CREATE TABLE usuarios(
   user VARCHAR (50) PRIMARY KEY NOt NULL,
-  pass VARCHAR (50) NOT NULL
+  pass VARCHAR (50) NOT NULL,
+  super BOOLEAN NOT NULL,
+  fechaInicioLicencia DATE NOT NULL,
+  fechaFinalLicencia DATE NOT NULL
 );
 INSERT INTO
-  usuarios(user, pass)
-VALUES("dextter1913", "123"),("admin", "123");
+  usuarios(user, pass, super, fechaInicioLicencia, fechaFinalLicencia)
+VALUES("dextter1913", "123",TRUE,'2021-05-11','2021-05-14'),("admin", "123",TRUE,'2021-05-11','2021-05-14');
 CREATE TABLE empleados(
     idEmp VARCHAR (20) PRIMARY KEY NOT NULL,
     nombreEmp VARCHAR (50) NOT NULL,

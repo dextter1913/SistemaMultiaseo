@@ -13,7 +13,9 @@ class validacionlogin
     private function ConsultaValidarUsuario(){
         $usuario = $this->usuario;
         $contraseña = $this->contraseña;
-        $query = "SELECT * FROM usuarios WHERE user = '$usuario' AND pass = '$contraseña'";
+        $conexion = new Conexion();
+        $conexion->EstablecerConexion()->query("UPDATE usuarios SET fechaInicioLicencia = CURDATE() WHERE user = '$usuario'");
+        $query = "SELECT * FROM usuarios WHERE user = '$usuario' AND pass = '$contraseña' AND super = TRUE AND fechaInicioLicencia <= fechaFinalLicencia";
         return $query;
     }
 
