@@ -31,7 +31,7 @@
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Ingresar
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
                                     <li><a class="dropdown-item" href="../registro">Clientes y Productos</a></li>
                                     <li><a class="dropdown-item" href="../zonas/">Zonas</a></li>
                                 </ul>
@@ -46,7 +46,7 @@
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Consultar
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
                                     <li><a class="dropdown-item" href="../consulta/">Productos</a></li>
                                     <li><a class="dropdown-item" href="#">Clientes</a></li>
                                 </ul>
@@ -55,7 +55,7 @@
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Gastos
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
                                     <li><a class="dropdown-item" href="../gastos/">Variables y Fijos</a></li>
                                     <li><a class="dropdown-item" href="../compras/">Compras</a></li>
                                 </ul>
@@ -64,7 +64,7 @@
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Cuenta
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
                                     <li><a class="dropdown-item" href="#">Actualizar Informacion</a></li>
                                     <li><a class="dropdown-item" href="#">Cambiar Contraseña</a></li>
                                 </ul>
