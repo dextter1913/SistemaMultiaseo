@@ -27,27 +27,48 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="../../registro/">Registro</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../../ventas/">Ventas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../../buscar-factura/">Buscar Factura</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../../consulta/">Consulta</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../../zonas/">Zonas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../../gastos/">Gastos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../../compras/">Compras</a>
-              </li>
+            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Ingresar
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="dropdown-item" href="../../registro">Clientes y Productos</a></li>
+                                    <li><a class="dropdown-item" href="../../zonas/">Zonas</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../../ventas">Ventas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../../buscar-factura/">Buscar Factura</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Consultar
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="dropdown-item" href="../../consulta/">Productos</a></li>
+                                    <li><a class="dropdown-item" href="#">Clientes</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Gastos
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="dropdown-item" href="../../gastos/">Variables y Fijos</a></li>
+                                    <li><a class="dropdown-item" href="../../compras/">Compras</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Cuenta
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                    <li><a class="dropdown-item" href="#">Actualizar Informacion</a></li>
+                                    <li><a class="dropdown-item" href="#">Cambiar Contraseña</a></li>
+                                </ul>
+                            </li>
             </ul>
             <form action="../../busqueda/" method="GET" class="d-flex">
               <input class="form-control me-2" name="id" type="search" placeholder="Ingrese ID" aria-label="Search">
