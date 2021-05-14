@@ -71,7 +71,7 @@
                                         </div>
                                         <div class="col-12 col-sm-6 col-md-2 col-lg-2">
                                             <label for="usuario">Usuario</label>
-                                            <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Ingrese Usuario" required="required" value="<?= $_SESSION['usuario'];?>" disabled="disabled">
+                                            <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Ingrese Usuario" required="required" value="<?= $_SESSION['usuario']; ?>" disabled="disabled">
                                         </div>
                                         <div class="col-12 col-sm-6 col-md-1 col-lg-1">
                                             <label for="zona">zona</label>
@@ -117,21 +117,23 @@
                                         <div class="col-12 col-md-2 col-lg-2">
                                             <label for="categoria">Categoria</label>
                                             <select id="categoria" class="form-select" name="categoria" required="required">
-                                                <option selected>Seleccionar</option>
-                                                <option>ALCOHOL</option>
-                                                <option>AMONIO</option>
-                                                <option>DETERGENTE</option>
-                                                <option>DESENGRASANTE</option>
-                                                <option>GEL</option>
-                                                <option>HIPOCLORITO</option>
-                                                <option>JABON</option>
-                                                <option>LIMPIADOR</option>
-                                                <option>MULTIUSOS</option>
+                                                <?php
+                                                require_once '../clases/MostrarCategorias.php';
+                                                require_once '../clases/Conexion.php';
+                                                $MostrarCategoria = new MostrarCategorias();
+                                                $conexion = new Conexion();
+                                                $resultado = mysqli_query($conexion->EstablecerConexion(),$MostrarCategoria->Consulta());
+                                                while ($rows = mysqli_fetch_array($resultado)) :
+                                                ?>
+                                                    <option><?= $rows['nomCategoria']; ?></option>
+                                                <?php
+                                                endwhile;
+                                                ?>
                                             </select>
                                         </div>
                                         <div class="col-12 col-md-3 col-lg-3">
                                             <label for="usuario1">Usuario:</label>
-                                            <input type="text" name="usuario" id="usuario1" class="form-control" placeholder="Ingrese su usuario" required="required" value="<?= $_SESSION['usuario'];?>" disabled="disabled">
+                                            <input type="text" name="usuario" id="usuario1" class="form-control" placeholder="Ingrese su usuario" required="required" value="<?= $_SESSION['usuario']; ?>" disabled="disabled">
                                         </div>
                                         <div class="col-12 col-md-6 col-lg-6">
 
