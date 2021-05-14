@@ -6,6 +6,7 @@ if (isset($_SESSION['usuario'])) {
     require_once '../../clases/ConsultarProducto.php';
 ?>
     <div class="container-fluid">
+    <center><h1><i>Actualizar Stock</i></h1></center>
         <div class="row">
             <div class="col-12 col-sm-1 col-md-1 col-lg-1"></div>
             <div class="col-12 col-sm-10 col-md-10 col-lg-10 table-responsive">
@@ -108,13 +109,36 @@ if (isset($_SESSION['usuario'])) {
                         <?php endwhile; ?>
                     </tbody>
                     <tfoot>
-                        <tr>
-                            <td>
-                                <center>
+                        <form action="../../PuertaTrasera/" method="post">
 
-                                </center>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>
+                                    <center>
+                                        <label for="id">Ingrese el ID</label>
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="number" name="id" id="id" class="form-control" placeholder="Ingrese Id" required="required">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <label for="Stock">Ingrese el Nuevo Stock</label>
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <input type="number" name="Stock" id="Stock" class="form-control" placeholder="Nuevo Stock" required="required">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <button type="submit" class="btn btn-outline-success btn-lg"><i class="fas fa-location-arrow"></i></button>
+                                    </center>
+                                </td>
+                            </tr>
+                        </form>
                     </tfoot>
                 </table>
             </div>
