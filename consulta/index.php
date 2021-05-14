@@ -6,22 +6,25 @@ if (isset($_SESSION['usuario'])) {
     require_once '../clases/Conexion.php';
 ?>
 
-    <form action="../consulta/" method="post">
-        <div class="container-fluid">
-            <center>
-                <h1><i>Busqueda de Productos</i></h1>
-            </center>
-            <div class="row">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4"></div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4 shadow p-3 mb-5 bg-body rounded">
+    <div class="container">
+        <center>
+            <h1><i>Busqueda de Productos</i></h1>
+        </center>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4 shadow p-3 mb-5 bg-body rounded">
+                <form action="../consulta/" method="post">
                     <label for="producto" title="Busqueda de Productos">Producto</label>
-                    <input type="text" name="producto" id="producto" class="form-control" placeholder="Criterio de busqueda">
-                    </br>
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-4"><button type="submit" class="btn btn-outline-danger btn-lg" name="btnBuscarProductos">Buscar</button></div>
-                </div>
+                    <input type="text" name="producto" id="producto" class="form-control" placeholder="Criterio de busqueda" required="requiered"><br />
+                    <button type="submit" class="btn btn-outline-danger btn-lg" name="btnBuscarProductos"><i class="fas fa-search"></i></button>
+                </form>
+                <a href="./IngresarNuevoStock/"><button class="btn btn-outline-warning btn-lg"><i class="fas fa-pencil-alt"></i></button></a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4">
             </div>
         </div>
-    </form>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-sm-4 col-md-1 col-lg-1"></div>
