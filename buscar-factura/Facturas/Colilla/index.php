@@ -1,4 +1,6 @@
 <?php
+session_start();
+if (isset($_SESSION['usuario'])) {
 require_once '../../../fpdf/fpdf.php';
 require_once '../../../clases/ConsultaFacturas.php';
 require_once '../../../clases/Conexion.php';
@@ -63,3 +65,6 @@ $iva = $total * 0.19;
 $pdf->Cell(1, 30, utf8_decode('IVA  ').number_format($iva), 0, 0, 'C', 0);
 $pdf->Cell(70, 30, utf8_decode('Total ').number_format($total), 0, 1, 'C', 0);
 $pdf->Output();
+}else {
+    header('Location:../');
+}

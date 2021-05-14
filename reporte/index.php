@@ -1,4 +1,6 @@
 <?php
+session_start();
+if (isset($_SESSION['usuario'])) {
 include '../conexiones/abrir.php';
 ?>
 
@@ -63,5 +65,7 @@ while ($suma = mysqli_fetch_array($registros3)) {
 $pdf->Cell(330, 10, utf8_decode('Total'), 0, 1, 'C', 0);
 $pdf->Cell(330, 10, $recventa, 0, 1, 'C', 0);
 $pdf->Output();
-
+} else {
+    header('Location:../');
+}
 ?>
