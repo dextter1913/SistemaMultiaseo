@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="../fontawesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="../../fontawesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="./fontawesome/css/all.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="imagenes/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
