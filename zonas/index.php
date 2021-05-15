@@ -58,7 +58,8 @@ if (isset($_SESSION['usuario'])) {
         </div>
     </div>
 
-<?php require_once '../estructura/inferior.php';
+<?php
+    require_once '../estructura/inferior.php';
 } else {
     header('Location:../');
 }
