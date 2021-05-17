@@ -2,7 +2,7 @@
 require_once 'Conexion.php';
     class ConsultarEmpleado  
     {
-        private $user;
+        protected $user;
 
         public function __construct($user) {
             $this->user = $user;

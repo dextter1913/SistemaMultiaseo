@@ -9,7 +9,7 @@ if (isset($_SESSION['usuario'])) {
 
     <center><strong><?= $_SESSION['usuario']; ?></center></strong>
     <div class="container">
-        <form action="" method="post">
+        <form action="../PuertaTrasera/ProcesoActualizarEmpleado.php" method="post">
             <div class="row shadow p-3 mb-5 bg-body rounded">
                 <div class="col-12 col-sm-6 col-md-4 col-lg-4">
                     <label for="idEmpleado" title="Ingrese el ID">Identidad Empleado</label>
