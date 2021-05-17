@@ -120,7 +120,7 @@
                                     Cuenta
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
-                                    <li><a class="dropdown-item" href="#">Actualizar Informacion</a></li>
+                                    <li><a class="dropdown-item" href="../../actualizar-informacion/">Actualizar Informacion</a></li>
                                     <li><a class="dropdown-item" href="#">Cambiar Contraseña</a></li>
                                 </ul>
                             </li>
