@@ -3,6 +3,7 @@ require_once '../clases/CambiarEstadoVentaYPrecio.php';
 if (empty($_POST['IdVenta'])) {
     session_start();
     $_SESSION['Mensaje'] = "No se selecciono ningun pedido";
+    $criterio = $_GET['criterio'];
     header("Location:../buscar-factura/Facturas?criterio=$criterio");
 } elseif ($_POST['Precio'] == "") {
 

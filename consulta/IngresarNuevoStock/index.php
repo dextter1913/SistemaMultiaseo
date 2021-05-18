@@ -6,120 +6,141 @@ if (isset($_SESSION['usuario'])) {
     require_once '../../clases/ConsultarProducto.php';
 ?>
     <div class="container-fluid">
-    <center><h1><i>Actualizar Stock</i></h1></center>
+        <center>
+            <h1><i>Actualizar Stock</i></h1>
+        </center>
         <div class="row">
             <div class="col-12 col-sm-1 col-md-1 col-lg-1"></div>
             <div class="col-12 col-sm-10 col-md-10 col-lg-10 table-responsive">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>
-                                <center>
-                                    ID Producto
-                                </center>
-                            </th>
-                            <th>
-                                <center>
-                                    Nombre Producto
-                                </center>
-                            </th>
-                            <th>
-                                <center>
-                                    Precio Producto
-                                </center>
-                            </th>
-                            <th>
-                                <center>
-                                    Precio Venta
-                                </center>
-                            </th>
-                            <th>
-                                <center>
-                                    Categoria
-                                </center>
-                            </th>
-                            <th>
-                                <center>
-                                    Descripcion
-                                </center>
-                            </th>
-                            <th>
-                                <center>
-                                    Stock
-                                </center>
-                            </th>
-                            <th>
-                                <center>
-                                    Usuario
-                                </center>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $MostrarProductos = new ConsultarProducto(null);
-                        $conexion = new Conexion();
-                        $consulta = mysqli_query($conexion->EstablecerConexion(), $MostrarProductos->QuerySeleccionarProducto());
-                        while ($rows = mysqli_fetch_array($consulta)) :
-
-
-                        ?>
+                <form action="../../PuertaTrasera/ProcesoActualizarNuevoStock.php" method="post">
+                    <table class="table table-hover">
+                        <thead>
                             <tr>
                                 <th>
                                     <center>
-                                        <?= $rows['idProd']; ?>
+                                        Seleccionar
                                     </center>
                                 </th>
-                                <td>
+                                <th>
                                     <center>
-                                        <?= $rows['nomProd']; ?>
+                                        ID Producto
                                     </center>
-                                </td>
-                                <td>
+                                </th>
+                                <th>
                                     <center>
-                                        <?= $rows['precioProd']; ?>
+                                        Nombre Producto
                                     </center>
-                                </td>
-                                <td>
+                                </th>
+                                <th>
                                     <center>
-                                        <?= $rows['precioVenta']; ?>
+                                        Precio Producto
                                     </center>
-                                </td>
-                                <td>
+                                </th>
+                                <th>
                                     <center>
-                                        <?= $rows['nomCategoria']; ?>
+                                        Precio Venta
                                     </center>
-                                </td>
-                                <td>
+                                </th>
+                                <th>
                                     <center>
-                                        <?= $rows['descripcionProd']; ?>
+                                        Categoria
                                     </center>
-                                </td>
-                                <td>
+                                </th>
+                                <th>
                                     <center>
-                                        <?= $rows['Stock']; ?>
+                                        Descripcion
                                     </center>
-                                </td>
-                                <td>
+                                </th>
+                                <th>
                                     <center>
-                                        <?= $rows['user']; ?>
+                                        Stock
                                     </center>
-                                </td>
+                                </th>
+                                <th>
+                                    <center>
+                                        Usuario
+                                    </center>
+                                </th>
                             </tr>
-                        <?php endwhile; ?>
-                    </tbody>
-                    <tfoot>
-                        <form action="../../PuertaTrasera/ProcesoActualizarNuevoStock.php" method="post">
-
+                        </thead>
+                        <tbody>
+                            <?php
+                            $MostrarProductos = new ConsultarProducto(null);
+                            $conexion = new Conexion();
+                            $consulta = mysqli_query($conexion->EstablecerConexion(), $MostrarProductos->QuerySeleccionarProducto());
+                            while ($rows = mysqli_fetch_array($consulta)) :
+                            ?>
+                                <tr>
+                                    <th>
+                                        <center><input type="checkbox" class="form-check-input" name="id[]" value="<?= $rows['idProd']; ?>" id="id"></center>
+                                    </th>
+                                    <th>
+                                        <center>
+                                            <?= $rows['idProd']; ?>
+                                        </center>
+                                    </th>
+                                    <td>
+                                        <center>
+                                            <?= $rows['nomProd']; ?>
+                                        </center>
+                                    </td>
+                                    <td>
+                                        <center>
+                                            <?= $rows['precioProd']; ?>
+                                        </center>
+                                    </td>
+                                    <td>
+                                        <center>
+                                            <?= $rows['precioVenta']; ?>
+                                        </center>
+                                    </td>
+                                    <td>
+                                        <center>
+                                            <?= $rows['nomCategoria']; ?>
+                                        </center>
+                                    </td>
+                                    <td>
+                                        <center>
+                                            <?= $rows['descripcionProd']; ?>
+                                        </center>
+                                    </td>
+                                    <td>
+                                        <center>
+                                            <?= $rows['Stock']; ?>
+                                        </center>
+                                    </td>
+                                    <td>
+                                        <center>
+                                            <?= $rows['user']; ?>
+                                        </center>
+                                    </td>
+                                </tr>
+                            <?php endwhile; ?>
+                        </tbody>
+                        <tfoot>
                             <tr>
                                 <td>
                                     <center>
-                                        <label for="id">Ingrese el ID</label>
                                     </center>
                                 </td>
                                 <td>
                                     <center>
-                                        <input type="number" name="id" id="id" class="form-control" placeholder="Ingrese Id" required="required">
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
+                                    </center>
+                                </td>
+                                <td>
+                                    <center>
                                     </center>
                                 </td>
                                 <td>
@@ -138,9 +159,9 @@ if (isset($_SESSION['usuario'])) {
                                     </center>
                                 </td>
                             </tr>
-                        </form>
-                    </tfoot>
-                </table>
+                        </tfoot>
+                    </table>
+                </form>
             </div>
             <div class="col-12 col-sm-1 col-md-1 col-lg-1"></div>
         </div>
@@ -150,6 +171,10 @@ if (isset($_SESSION['usuario'])) {
 
 
 <?php
+    if (isset($_SESSION['Mensaje'])) {
+        print $_SESSION['Mensaje'];
+        unset($_SESSION['Mensaje']);
+    }
     require_once '../../estructura/inferior.php';
 } else {
     header('Location:../');
