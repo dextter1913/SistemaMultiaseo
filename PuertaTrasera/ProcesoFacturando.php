@@ -1,14 +1,20 @@
 <?php
-if (isset($_POST['btnModificarEstadoVenta'])) {
-    require_once '../clases/CambiarEstadoVentaYPrecio.php';
-    $CambiarEstadoVenta = new CambiarEstadoVentaYPrecio($_POST['EstadoVenta'], $_POST['IdVenta'], $_POST['Precio']);
+require_once '../clases/CambiarEstadoVentaYPrecio.php';
+if (empty($_POST['IdVenta'])) {
+    session_start();
+    $_SESSION['Mensaje'] = "No se selecciono ningun pedido";
+    header("Location:../buscar-factura/Facturas?criterio=$criterio");
+} elseif ($_POST['Precio'] == "") {
 
-    if ($_POST['Precio'] == "") {
+    foreach ($_POST['IdVenta'] as $idVenta) {
+        $CambiarEstadoVenta = new CambiarEstadoVentaYPrecio($_POST['EstadoVenta'], $idVenta, $_POST['Precio']);
         $CambiarEstadoVenta->CambiarEstadoVenta();
         $criterio = $_GET['criterio'];
         header("Location:../buscar-factura/Facturas?criterio=$criterio");
-    } else {
-
+    }
+} else {
+    foreach ($_POST['IdVenta'] as $idVenta) {
+        $CambiarEstadoVenta = new CambiarEstadoVentaYPrecio($_POST['EstadoVenta'], $idVenta, $_POST['Precio']);
         $CambiarEstadoVenta->CambiarPrecioVenta();
         $criterio = $_GET['criterio'];
         header("Location:../buscar-factura/Facturas?criterio=$criterio");

@@ -45,6 +45,9 @@ if (isset($_SESSION['usuario'])) {
                                         <th>
                                             <center>Estado Actual</center>
                                         </th>
+                                        <th>
+                                            <center>Seleccionar</center>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -76,6 +79,9 @@ if (isset($_SESSION['usuario'])) {
                                             <td>
                                                 <center><?php echo $rows['Estadoventa']; ?></center>
                                             </td>
+                                            <td>
+                                                <center><input type="checkbox" class="form-check-input" name="IdVenta[]" value="<?php echo $rows['idventa']; ?>"></center>
+                                            </td>
                                         </tr>
                                     <?php
                                         $total = $total + $rows['totalV'];
@@ -89,12 +95,10 @@ if (isset($_SESSION['usuario'])) {
                                     <tr>
                                         <td><?php echo $total; ?></td>
                                         <td></td>
-                                        <td>
-                                            <label for="IdVneta">Ingrese ID</label>
-                                        </td>
-                                        <td>
-                                            <input type="text" name="IdVenta" class="form-control" id="IdVenta" placeholder="Id venta" required="required">
-                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                         <td>
                                             <select id="categoria" class="form-select" name="EstadoVenta">
                                                 <option selected>Pendiente</option>
@@ -122,7 +126,10 @@ if (isset($_SESSION['usuario'])) {
         <a href="./Colilla/?criterio=<?= $criterio; ?>&Factura= <?= $rows['fechaFactura']; ?>" target="_blank"><button class="btn btn-outline-danger btn-sm"><i class="far fa-file-pdf"></i></button></a>
     </center>
 <?php
-
+if (isset($_SESSION['Mensaje'])) {
+    print $_SESSION['Mensaje'];
+    unset($_SESSION['Mensaje']);
+}
 
     include("../../conexiones/cerrar.php");
     include("../../estructura/inferior.php");
