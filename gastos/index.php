@@ -12,29 +12,24 @@ if (isset($_SESSION['usuario'])) {
         <center>
             <h1><i>Gastos</i></h1>
         </center>
+        <?php
+        if (isset($_SESSION['Mensaje'])) {
+            print $_SESSION['Mensaje'];
+            unset($_SESSION['Mensaje']);
+        }
+        ?>
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4 col-lg-4 shadow p-3 mb-5 bg-body rounded">
                 <center>
                     <h6><i>Gastos que se requieren descontar</i></h6>
                 </center>
-                <form action="../gastos/" method="post">
-                    <label for="idtotal">Ingrese ID</label>
-                    <input type="number" name="idtotal" id="idtotal" placeholder="Ingrese ID del total" title="idtotal" class="form-control"><br/>
+                <form action="../PuertaTrasera/ProcesoCambioEstadoTotales.php" method="post">
                     <label for="fijos">Gastos Fijos</label>
-                    <input type="number" name="fijos" id="fijos" placeholder="Ingrese Gastos fijos" title="Gastos fijos" class="form-control"></br>
+                    <input type="number" name="fijos" id="fijos" placeholder="Ingrese Gastos fijos" title="Gastos fijos" class="form-control" required="required"></br>
                     <label for="variables">Gastos Variables</label>
-                    <input type="number" name="variables" id="variables" placeholder="Ingrese Gastos Variables" title="Gastos Variables" class="form-control">
+                    <input type="number" name="variables" id="variables" placeholder="Ingrese Gastos Variables" title="Gastos Variables" class="form-control" required="required">
                     </br>
                     <center><button class="btn btn-outline-secondary btn-lg"><i class="fas fa-cash-register"></i></button></center>
-                </form>
-                <?php
-                if (isset($_POST['fijos']) && isset($_POST['variables'])) {
-                    $cuadrecaja = new CuadreCaja($_POST['idtotal'],$_POST['fijos'], $_POST['variables']);
-                    $cuadrecaja->TotalAModificar();
-                }
-
-                ?>
-
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-4 table-responsive">
                 <center>
@@ -44,7 +39,7 @@ if (isset($_SESSION['usuario'])) {
                     <thead>
                         <tr>
                             <th>
-                                <center>ID</center>
+                                <center>Seleccion</center>
                             </th>
                             <th>
                                 <center>Cantidad</center>
@@ -67,7 +62,10 @@ if (isset($_SESSION['usuario'])) {
                         ?>
                             <tr>
                                 <td>
-                                    <center><?= $rows['idtotal']; ?></center>
+                                    <center><input type="checkbox" name="idtotal[]" value="<?= $rows['idtotal']; ?>" type="checkbox" class="btn-check" id="btn-check">
+                                        <label class="btn btn-outline-success btn-sm" for="btn-check"><i class="far fa-check-circle"></i></label>
+                                    </center>
+                                    </form>
                                 </td>
                                 <td>
                                     <center><?= number_format($rows['cantidad']); ?></center>
@@ -80,10 +78,10 @@ if (isset($_SESSION['usuario'])) {
                                 </td>
                                 <td>
                                     <center>
-                                        <form action="../PuertaTrasera/ProcesoEliminarTotalSinCuadre.php?idTotal=<?= $rows['idtotal']; ?>" method="post"><?php //Enviando Datos por metodo Get el id del total para eliminar el total en la clase EliminarTotal, usando el ProcesoEliminarTotalSinCuadre                                                                                                           
-                                                                                                                                                            ?>
-                                            <button class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                                        </form>
+                                        <a href="../PuertaTrasera/ProcesoEliminarTotalSinCuadre.php?idTotal=<?= $rows['idtotal']; ?>" class="btn btn-outline-danger btn-sm">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a><?php //Enviando Datos por metodo Get el id del total para eliminar el total en la clase EliminarTotal, usando el ProcesoEliminarTotalSinCuadre                                                                                                           
+                                            ?>
                                     </center>
                                 </td>
                             </tr>
@@ -137,23 +135,20 @@ if (isset($_SESSION['usuario'])) {
                                 </td>
                                 <td>
                                     <center>
-                                        <form action="../PuertaTrasera/ProcesoEliminarTotalConCuadre.php?idTotal=<?= $rows['idtotal']; ?>" method="post"><?php //Enviando Datos por metodo Get el id del total para eliminar el total en la clase EliminarTotal, usando el ProcesoEliminarTotalSinCuadre                                                                                                           
-                                                                                                                                                            ?>
-                                            <button class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                                        </form>
+                                        <a href="../PuertaTrasera/ProcesoEliminarTotalConCuadre.php?idTotal=<?= $rows['idtotal']; ?>" class="btn btn-outline-danger btn-sm">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a><?php //Enviando Datos por metodo Get el id del total para eliminar el total en la clase EliminarTotal, usando el ProcesoEliminarTotalSinCuadre
+                                            ?>
                                     </center>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>
                 </table>
-
             </div>
-
             <?php
             $fijos = $_POST['fijos'];
             $variables = $_POST['variables'];
-
             ?>
         </div>
     </div>

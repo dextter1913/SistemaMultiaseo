@@ -80,7 +80,9 @@ if (isset($_SESSION['usuario'])) {
                                                 <center><?php echo $rows['Estadoventa']; ?></center>
                                             </td>
                                             <td>
-                                                <center><input type="checkbox" class="form-check-input" name="IdVenta[]" value="<?php echo $rows['idventa']; ?>"></center>
+                                                <center><input type="checkbox" name="IdVenta[]" value="<?php echo $rows['idventa']; ?>" type="checkbox" class="btn-check" id="btn-check">
+                                                    <label class="btn btn-outline-success btn-sm" for="btn-check"><i class="far fa-check-circle"></i></label>
+                                                </center>
                                             </td>
                                         </tr>
                                     <?php
@@ -126,10 +128,10 @@ if (isset($_SESSION['usuario'])) {
         <a href="./Colilla/?criterio=<?= $criterio; ?>&Factura= <?= $rows['fechaFactura']; ?>" target="_blank"><button class="btn btn-outline-danger btn-sm"><i class="far fa-file-pdf"></i></button></a>
     </center>
 <?php
-if (isset($_SESSION['Mensaje'])) {
-    print $_SESSION['Mensaje'];
-    unset($_SESSION['Mensaje']);
-}
+    if (isset($_SESSION['Mensaje'])) {
+        print $_SESSION['Mensaje'];
+        unset($_SESSION['Mensaje']);
+    }
 
     include("../../conexiones/cerrar.php");
     include("../../estructura/inferior.php");
