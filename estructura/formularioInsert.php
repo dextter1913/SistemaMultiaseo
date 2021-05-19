@@ -118,16 +118,16 @@
                                             <label for="categoria">Categoria</label>
                                             <select id="categoria" class="form-select" name="categoria" required="required">
                                                 <?php
-                                                require_once '../clases/MostrarCategorias.php';
-                                                require_once '../clases/Conexion.php';
-                                                $MostrarCategoria = new MostrarCategorias();
-                                                $conexion = new Conexion();
-                                                $resultado = mysqli_query($conexion->EstablecerConexion(),$MostrarCategoria->Consulta());
-                                                while ($rows = mysqli_fetch_array($resultado)) :
+                                                //require_once '../clases/MostrarCategorias.php';
+                                                //require_once '../clases/Conexion.php';
+                                                //$MostrarCategoria = new MostrarCategorias();
+                                                //$conexion = new Conexion();
+                                                //$resultado = mysqli_query($conexion->EstablecerConexion(),$MostrarCategoria->Consulta());
+                                                //while ($rows = mysqli_fetch_array($resultado)) :
                                                 ?>
-                                                    <option><?= $rows['nomCategoria']; ?></option>
+                                                    <option>Jabon<?php //$rows['nomCategoria']; ?></option>
                                                 <?php
-                                                endwhile;
+                                                //endwhile;
                                                 ?>
                                             </select>
                                         </div>
