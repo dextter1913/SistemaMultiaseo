@@ -21,8 +21,12 @@ VALUES(
     "123",
     TRUE,
     '2021-05-11',
-    '2021-05-14'
-  ),("admin", "123", TRUE, '2021-05-11', '2021-05-14');
+    '2022-05-14'
+  ),("admin", 
+  "123", 
+  TRUE, 
+  '2021-05-11', 
+  '2022-05-14');
 CREATE TABLE empleados(
     idEmp VARCHAR (20) PRIMARY KEY NOT NULL,
     nombreEmp VARCHAR (50) NOT NULL,
