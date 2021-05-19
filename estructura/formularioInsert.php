@@ -71,7 +71,7 @@
                                         </div>
                                         <div class="col-12 col-sm-6 col-md-2 col-lg-2">
                                             <label for="usuario">Usuario</label>
-                                            <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Ingrese Usuario" required="required" value="<?= $_SESSION['usuario']; ?>" disabled="disabled">
+                                            <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Ingrese Usuario" required="required">
                                         </div>
                                         <div class="col-12 col-sm-6 col-md-1 col-lg-1">
                                             <label for="zona">zona</label>
