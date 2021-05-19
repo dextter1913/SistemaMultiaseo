@@ -133,7 +133,7 @@
                                         </div>
                                         <div class="col-12 col-md-3 col-lg-3">
                                             <label for="usuario1">Usuario:</label>
-                                            <input type="text" name="usuario" id="usuario1" class="form-control" placeholder="Ingrese su usuario" required="required" value="<?= $_SESSION['usuario']; ?>" disabled="disabled">
+                                            <input type="text" name="usuario" id="usuario1" class="form-control" placeholder="Ingrese su usuario" required="required">
                                         </div>
                                         <div class="col-12 col-md-6 col-lg-6">
 
