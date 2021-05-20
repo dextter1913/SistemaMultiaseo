@@ -111,7 +111,7 @@ if (isset($_SESSION['usuario'])) {
                         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
                                 <div class="shadow p-3 mb-5 bg-body rounded">
-                                    <form action="../PuertaTrasera/ProcesoIngresarProd.php" method="get">
+                                    <form action="../PuertaTrasera/index.php" method="get">
                                         <div class="row">
                                             <div class="col-12 col-md-3 col-lg-3">
                                                 <label for="nombreN">Nombre producto</label>
