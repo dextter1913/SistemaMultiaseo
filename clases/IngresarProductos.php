@@ -27,5 +27,6 @@ class IngresarProductos extends Productos
         $conexion = new Conexion();
         $conexion->EstablecerConexion()->query("INSERT INTO productos(nomProd, precioProd, precioVenta, nomCategoria, descripcionProd, Stock, user) 
         VALUES('$_nombreProducto','$_precio','$_precioVenta','$_categoria','$_descripcionP','$_Stock','$_usuario')");
+        print '<center>producto registrado</center>';
     }
 }

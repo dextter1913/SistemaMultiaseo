@@ -111,7 +111,7 @@ if (isset($_SESSION['usuario'])) {
                         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
                                 <div class="shadow p-3 mb-5 bg-body rounded">
-                                    <form action="../registro" method="post">
+                                    <form action="../PuertaTrasera/ProcesoIngresarProductos.php" method="post">
                                         <div class="row">
                                             <div class="col-12 col-md-3 col-lg-3">
                                                 <label for="nombreN">Nombre producto</label>
@@ -161,7 +161,7 @@ if (isset($_SESSION['usuario'])) {
                                 </form>
                                 <?php
                                 if (isset($_POST['btningresarproducto'])) {
-                                    require_once '../clases/ingresarProductos.php';
+                                    require_once '../clases/IngresarProductos.php';
                                     $IngresProductos = new IngresarProductos($_POST['nombre'], $_POST['precio'], $_POST['precioVenta'], $_POST['categoria'], $_POST['DescripcionP'], $_POST['Stock'], $_POST['usuario']); //enviando los datos por metodo post en el parametro del objeto 
                                     $IngresProductos->InsertarProducto();
                                 }
