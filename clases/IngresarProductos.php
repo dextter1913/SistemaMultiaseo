@@ -1,6 +1,6 @@
 <?php
-require_once 'Productos.php';
 require_once 'Conexion.php';
+require_once 'Productos.php';
 class IngresarProductos extends Productos
 {
     function __construct($_nombreProducto, $_precio, $_precioVenta, $_categoria, $_descripcionP, $_Stock, $_usuario,) //recibiendo los datos de los productos enviados en losparametros del objetos por metodo post
