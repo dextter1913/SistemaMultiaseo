@@ -1,8 +1,8 @@
 <?php
-$host = "atlaz.cvcpedzqpzzg.us-east-2.rds.amazonaws.com";
-$user = "admin";
-$pass = "12345678";
-$db = "multiaseo";
+$host = "bgzdh6zz0h3xrgh672kg-mysql.services.clever-cloud.com";
+$user = "u5sumbtoonzzwft7";
+$pass = "qDL3tpVESjCR0GrABpWU";
+$db = "bgzdh6zz0h3xrgh672kg";
 $tbcliente = "cliente";
 $tbempleado = "empleados";
 $tbusuarios = "usuarios";
