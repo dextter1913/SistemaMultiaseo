@@ -86,7 +86,8 @@
                                     Ingresar
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
-                                    <li><a class="dropdown-item" href="../../registro">Clientes y Productos</a></li>
+                                    <li><a class="dropdown-item" href="../../Ingresar-Clientes/">Clientes</a></li>
+                                    <li><a class="dropdown-item" href="../../Ingresar-Productos/">Productos</a></li>
                                     <li><a class="dropdown-item" href="../../zonas/">Zonas</a></li>
                                     <li><a class="dropdown-item" href="../../categorias/">Categorias</a></li>
                                 </ul>
