@@ -20,23 +20,23 @@ if (isset($_SESSION['usuario'])) {
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
                             <div class="shadow p-3 mb-5 bg-body rounded">
-                                <form action="../Ingresar-Productos/" method="post">
+                                <form action="../PuertaTrasera/ProcesoIngresarProducto.php" method="post">
                                     <div class="row">
                                         <div class="col-12 col-md-3 col-lg-3">
                                             <label for="nombreN">Nombre producto</label>
-                                            <input type="text" name="nombre" id="nombreN" class="form-control" placeholder="Ingrese Producto" required="required">
+                                            <input type="text" name="nombre" id="nombreN" class="form-control" placeholder="Ingrese Producto">
                                         </div>
                                         <div class="col-12 col-md-3 col-lg-3">
                                             <label for="precio">Precio Producto</label>
-                                            <input type="number" name="precio" id="precio" class="form-control" placeholder="valor" required="required">
+                                            <input type="number" name="precio" id="precio" class="form-control" placeholder="valor">
                                         </div>
                                         <div class="col-12 col-md-3 col-lg-3">
                                             <label for="precioVenta">Precio Venta</label>
-                                            <input type="number" name="precioVenta" id="precioVenta" class="form-control" placeholder="valor" required="required">
+                                            <input type="number" name="precioVenta" id="precioVenta" class="form-control" placeholder="valor">
                                         </div>
                                         <div class="col-12 col-md-2 col-lg-2">
                                             <label for="categoria">Categoria</label>
-                                            <select id="categoria" class="form-select" name="categoria" required="required">
+                                            <select id="categoria" class="form-select" name="categoria">
                                                 <?php
                                                 require_once '../clases/MostrarCategorias.php';
                                                 require_once '../clases/Conexion.php';
@@ -53,16 +53,16 @@ if (isset($_SESSION['usuario'])) {
                                         </div>
                                         <div class="col-12 col-md-3 col-lg-3">
                                             <label for="usuario1">Usuario:</label>
-                                            <input type="text" name="usuario" id="usuario1" class="form-control" placeholder="Ingrese su usuario" required="required">
+                                            <input type="text" name="usuario" id="usuario1" class="form-control" placeholder="Ingrese su usuario">
                                         </div>
                                         <div class="col-12 col-md-6 col-lg-6">
 
                                             <label for="DescripcionP">Descripcion</label>
-                                            <textarea name="DescripcionP" id="DescripcionP" cols="30" rows="3" class="form-control" placeholder="Ingrese Caracteristicas del producto" required="required"></textarea>
+                                            <textarea name="DescripcionP" id="DescripcionP" cols="30" rows="3" class="form-control" placeholder="Ingrese Caracteristicas del producto"></textarea>
                                         </div>
                                         <div class="col-12 col-md-2 col-lg-3">
                                             <label for="Stock">Stock y/o Cantidad</label>
-                                            <input type="number" name="Stock" id="Stock" class="form-control" placeholder="Cantidad" required="required">
+                                            <input type="number" name="Stock" id="Stock" class="form-control" placeholder="Cantidad">
                                         </div>
                                         <div class="col-12 col-md-3 col-lg-3"><br /><input type="submit" value="Registrar" class="btn btn-outline-success btn-lg" name="btningresarproducto"></div>
                                     </div>
