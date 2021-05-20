@@ -68,29 +68,21 @@ if (isset($_SESSION['usuario'])) {
                                     </div>
                             </div>
                             </form>
-                            <?php
-                            if (isset($_SESSION['prueba'])) {
-                                echo $_SESSION['prueba'];
-                            }
-                            //if (isset($_POST['btningresarproducto'])) {
-                            //    require_once '../clases/IngresarProductos.php';
-                            //    $IngresProductos = new IngresarProductos($_POST['nombre'], $_POST['precio'], $_POST['precioVenta'], $_POST['categoria'], $_POST['DescripcionP'], $_POST['Stock'], $_POST['usuario']); //enviando los datos por metodo post en el parametro del objeto 
-                            //    $IngresProductos->InsertarProducto();
-                            //}
-                            //if (isset($_SESSION['Mensaje'])) {
-                            //    print $_SESSION['Mensaje'];
-                            //    unset($_SESSION['Mensaje']);
-                            //}
-                            ?>
                         </div>
                     </div>
-                    </div1 </div>
-                    <div class="col-12 col-sm-1 col-md-1 col-lg-1"></div>
                 </div>
             </div>
-        <?php
-        require_once '../estructura/inferior.php';
-    } else {
-        header('Location:../');
-    }
-        ?>
+            <div class="col-12 col-sm-1 col-md-1 col-lg-1"></div>
+            <?php
+            if (isset($_SESSION['prueba'])) {
+                echo $_SESSION['prueba'];
+            }
+            ?>
+        </div>
+    </div>
+<?php
+    require_once '../estructura/inferior.php';
+} else {
+    header('Location:../');
+}
+?>
