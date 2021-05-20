@@ -14,10 +14,14 @@ if (isset($_SESSION['usuario'])) {
 
 ?>
 <?php
-    if (isset($_SESSION['Mensaje'])) {
-        print $_SESSION['Mensaje'];
-        unset($_SESSION['Mensaje']);
-    }
+if (isset($_POST['btnregistrar'])) {
+    $IngresProductos = new IngresarProductos($_POST['nombre'], $_POST['precio'], $_POST['precioVenta'], $_POST['categoria'], $_POST['DescripcionP'], $_POST['Stock'], $_POST['usuario']); //enviando los datos por metodo post en el parametro del objeto 
+    $IngresProductos->InsertarProducto();
+}
+    //if (isset($_SESSION['Mensaje'])) {
+    //    print $_SESSION['Mensaje'];
+    //    unset($_SESSION['Mensaje']);
+    //}
 ?>
 <?php
     include("../estructura/inferior.php");
