@@ -1,6 +1,6 @@
-DROP DATABASE if EXISTS multiaseo;
-CREATE DATABASE multiaseo;
-USE multiaseo;
+--DROP DATABASE if EXISTS bgzdh6zz0h3xrgh672kg;
+--CREATE DATABASE bgzdh6zz0h3xrgh672kg;
+USE bgzdh6zz0h3xrgh672kg;
 CREATE TABLE usuarios(
   user VARCHAR (50) PRIMARY KEY NOt NULL,
   pass VARCHAR (50) NOT NULL,
@@ -57,7 +57,7 @@ VALUES(
     "3166857000",
     "cra 33 47 35 int 172",
     "clau32usa@gmail.com",
-    1994 -07 -16,
+    '1994-07-16',
     "dextter1913"
   );
 CREATE TABLE zonas(
