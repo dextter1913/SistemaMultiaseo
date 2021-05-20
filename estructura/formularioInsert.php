@@ -1,6 +1,4 @@
-<?php 
-require_once '../estructura/superior.php';
-?>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-1 col-md-1"></div>
@@ -158,5 +156,4 @@ require_once '../estructura/superior.php';
         </div>
     </div>
     <div class="col-1 col-md-1"></div>
-</div>
 </div>
