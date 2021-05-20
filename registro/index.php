@@ -2,8 +2,6 @@
 session_start();
 if (isset($_SESSION['usuario'])) {
     require_once '../estructura/superior.php';
-    require_once '../clases/ingresarProductos.php';
-
 ?>
     <div class="container-fluid">
         <div class="row">
@@ -163,6 +161,7 @@ if (isset($_SESSION['usuario'])) {
                                 </form>
                                 <?php
                                 if (isset($_POST['btningresarproducto'])) {
+                                    require_once '../clases/ingresarProductos.php';
                                     $IngresProductos = new IngresarProductos($_POST['nombre'], $_POST['precio'], $_POST['precioVenta'], $_POST['categoria'], $_POST['DescripcionP'], $_POST['Stock'], $_POST['usuario']); //enviando los datos por metodo post en el parametro del objeto 
                                     $IngresProductos->InsertarProducto();
                                 }
