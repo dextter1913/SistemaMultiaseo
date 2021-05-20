@@ -6,7 +6,6 @@ $IngresProductos = new IngresarProductos($_POST['nombre'], $_POST['precio'], $_P
 $IngresProductos->InsertarProducto();
 session_start();
 $_SESSION['prueba'] = "<center>Producto ingresado correctamente</center>";
-echo $_SESSION['prueba'];
-//header('Location:../Ingresar-Productos');
+header('Location:../Ingresar-Productos');
 
 ?>
