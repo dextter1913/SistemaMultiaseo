@@ -76,6 +76,7 @@ if (isset($_SESSION['usuario'])) {
             <?php
             if (isset($_SESSION['prueba'])) {
                 echo $_SESSION['prueba'];
+                session_unset($_SESSION['prueba']);
             }
             ?>
         </div>
