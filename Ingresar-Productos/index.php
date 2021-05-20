@@ -69,11 +69,14 @@ if (isset($_SESSION['usuario'])) {
                             </div>
                             </form>
                             <?php
-                            if (isset($_POST['btningresarproducto'])) {
-                                require_once '../clases/IngresarProductos.php';
-                                $IngresProductos = new IngresarProductos($_POST['nombre'], $_POST['precio'], $_POST['precioVenta'], $_POST['categoria'], $_POST['DescripcionP'], $_POST['Stock'], $_POST['usuario']); //enviando los datos por metodo post en el parametro del objeto 
-                                $IngresProductos->InsertarProducto();
+                            if (isset($_SESSION['prueba'])) {
+                                echo $_SESSION['prueba'];
                             }
+                            //if (isset($_POST['btningresarproducto'])) {
+                            //    require_once '../clases/IngresarProductos.php';
+                            //    $IngresProductos = new IngresarProductos($_POST['nombre'], $_POST['precio'], $_POST['precioVenta'], $_POST['categoria'], $_POST['DescripcionP'], $_POST['Stock'], $_POST['usuario']); //enviando los datos por metodo post en el parametro del objeto 
+                            //    $IngresProductos->InsertarProducto();
+                            //}
                             //if (isset($_SESSION['Mensaje'])) {
                             //    print $_SESSION['Mensaje'];
                             //    unset($_SESSION['Mensaje']);
