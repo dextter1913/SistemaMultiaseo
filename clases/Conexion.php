@@ -9,7 +9,7 @@ class Conexion
     protected $tbempleado;
     protected $tbusuarios;
     protected $tbproductos;
-    function __construct($host = "bgzdh6zz0h3xrgh672kg-mysql.services.clever-cloud.com", $user = "u5sumbtoonzzwft7", $pass = "qDL3tpVESjCR0GrABpWU", $db = "bgzdh6zz0h3xrgh672kg", $tbcliente = "cliente", $tbempleado = "empleados", $tbusuarios = "usuarios", $tbproductos = "productos")
+    function __construct($host = "atlazdb.cvcpedzqpzzg.us-east-2.rds.amazonaws.com", $user = "admin", $pass = "Clau32290398", $db = "AtlazMultiaseo", $tbcliente = "cliente", $tbempleado = "empleados", $tbusuarios = "usuarios", $tbproductos = "productos")
     {
         $this->host = $host;
         $this->user = $user;

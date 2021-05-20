@@ -1,6 +1,6 @@
-DROP DATABASE if EXISTS bgzdh6zz0h3xrgh672kg;
-CREATE DATABASE bgzdh6zz0h3xrgh672kg;
-USE bgzdh6zz0h3xrgh672kg;
+DROP DATABASE if EXISTS AtlazMultiaseo;
+CREATE DATABASE AtlazMultiaseo;
+USE AtlazMultiaseo;
 CREATE TABLE usuarios(
   user VARCHAR (50) PRIMARY KEY NOt NULL,
   pass VARCHAR (50) NOT NULL,
