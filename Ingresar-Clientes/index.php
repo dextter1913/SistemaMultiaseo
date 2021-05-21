@@ -33,7 +33,7 @@ if (isset($_SESSION['usuario'])) {
                                             </div>
                                             <div class="col-12 col-sm-6 col-md-3 col-lg-3">
                                                 <label for="apellido">Apellido</label>
-                                                <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Apellido" required="required">
+                                                <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Apellido">
                                             </div>
                                             <div class="col-12 col-sm-6 col-md-4 col-lg-4">
                                                 <label for="nombrenegocio">Nombre Negocio</label>
