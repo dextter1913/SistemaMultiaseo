@@ -104,7 +104,7 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarScrollingDropdown">
                                     <li><a class="dropdown-item" href="../../consulta/">Productos</a></li>
-                                    <li><a class="dropdown-item" href="#">Clientes</a></li>
+                                    <li><a class="dropdown-item" href="../../clientes/">Clientes</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
