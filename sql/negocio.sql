@@ -153,8 +153,8 @@ CREATE TABLE compras(
   );
 CREATE TABLE logs(
     idlog INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    HoraLogeo DATE,
-    FechaLogeo TIME,
+    FechaLogeo DATETIME,
+    FechaDeslogeo DATETIME,
     user VARCHAR (50) NOT NULL,
     index(user),
     FOREIGN KEY (user) REFERENCES usuarios(user)
