@@ -76,7 +76,7 @@ if (isset($_SESSION['usuario'])) {
                                             </div>
                                             <div class="col-12 col-sm-6 col-md-2 col-lg-2">
                                                 <label for="usuario">Usuario</label>
-                                                <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Ingrese Usuario" required="required">
+                                                <input type="text" name="usuario" id="usuario" class="form-control" value="<?= $_SESSION['usuario'] ?>" required="required" disabled="disabled">
                                             </div>
                                             <div class="col-12 col-sm-6 col-md-1 col-lg-1">
                                                 <label for="zona">zona</label>
