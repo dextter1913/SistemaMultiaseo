@@ -71,14 +71,14 @@ if (isset($_SESSION['usuario'])) {
                         </div>
                     </div>
                 </div>
+                <?php
+                if (isset($_SESSION['prueba'])) {
+                    echo $_SESSION['prueba'];
+                    unset($_SESSION['prueba']);
+                }
+                ?>
             </div>
             <div class="col-12 col-sm-1 col-md-1 col-lg-1"></div>
-            <?php
-            if (isset($_SESSION['prueba'])) {
-                echo $_SESSION['prueba'];
-                session_unset($_SESSION['prueba']);
-            }
-            ?>
         </div>
     </div>
 <?php
