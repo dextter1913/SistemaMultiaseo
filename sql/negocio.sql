@@ -85,9 +85,6 @@ CREATE TABLE cliente(
 CREATE TABLE categorias(
     nomCategoria VARCHAR (50) PRIMARY KEY NOT NULL
   );
-INSERT INTO
-  categorias(nomCategoria)
-values('HIPOCLORITO'),('JABON'),('AMONIO'),('MULTIUSOS'),('DETERGENTE'),('DESENGRASANTE'),('LIMPIADOR'),('ALCOHOL'),('GEL');
 CREATE TABLE productos(
     idProd INTEGER (20) PRIMARY KEY AUTO_INCREMENT,
     nomProd VARCHAR (50) NOT NULL,
@@ -161,7 +158,7 @@ CREATE TABLE logs(
   );
   /*SELECT * FROM usuarios WHERE user = 'dextter1913' AND pass = '123' AND super = TRUE AND fechaInicioLicencia = '2021-05-11' AND fechaFinalLicencia <= '2021-05-14';
   
-  
+  --ON DELETE CASCADE
   
   
   
