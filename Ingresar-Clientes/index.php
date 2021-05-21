@@ -2,6 +2,8 @@
 session_start();
 if (isset($_SESSION['usuario'])) {
     require_once '../estructura/superior.php';
+    require_once '../clases/Conexion.php';
+    require_once '../clases/ConsultarZonas.php';
 ?>
     <div class="container-fluid">
         <div class="row">
@@ -66,21 +68,32 @@ if (isset($_SESSION['usuario'])) {
                                             </div>
                                         </div><br>
                                         <div class="row">
-                                            <div class="col-12 col-md-4">
+                                            <div class="col-12 col-sm-6 col-md-2 col-lg-2">
                                                 <label for="telefono">Telefono</label>
                                                 <input type="text" name="telefono" id="telefono" class="form-control" placeholder="Telefono" required="required">
                                             </div>
-                                            <div class="col-12 col-md-3">
-                                                <label for="fechanac">Fecha de Nacimiento</label>
+                                            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                                                <label for="fechanac">Fecha Nacimiento</label>
                                                 <input type="date" name="fechanac" id="fechanac" class="form-control" required="required">
                                             </div>
                                             <div class="col-12 col-sm-6 col-md-2 col-lg-2">
                                                 <label for="usuario">Usuario</label>
                                                 <input type="text" name="usuario" id="usuario" class="form-control" value="<?= $_SESSION['usuario']; ?>" required="required" disabled="disabled">
                                             </div>
-                                            <div class="col-12 col-sm-6 col-md-1 col-lg-1">
-                                                <label for="zona">zona</label>
-                                                <input type="text" name="zona" id="zona" class="form-control" placeholder="N°" required="required">
+                                            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+                                                <label for="inputStatezona">zona</label>
+                                                <select id="inputStatezona" class="form-select" name="zona" required="required">
+                                                    <?php
+                                                            $conexion = new Conexion();
+                                                            $consulta = new ConsultarZonas();
+                                                            $resultados = mysqli_query($conexion->EstablecerConexion(),$consulta->MostrarZonas());
+                                                            while ($rows = mysqli_fetch_array($resultados)) :   
+                                                    ?>
+                                                    <option><?= $rows['idzona'].' '.$rows['nombrezona']; ?></option>
+                                                    <?php 
+                                                    endwhile; 
+                                                    ?>
+                                                </select>
                                             </div>
                                             <div class="col-12 col-sm-6 col-md-1 col-lg-1">
                                                 <input type="submit" value="Registrar" class="btn btn-outline-success btn-lg" name="btningresarcliente">
