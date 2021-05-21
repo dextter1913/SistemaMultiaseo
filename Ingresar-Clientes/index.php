@@ -76,7 +76,7 @@ if (isset($_SESSION['usuario'])) {
                                             </div>
                                             <div class="col-12 col-sm-6 col-md-2 col-lg-2">
                                                 <label for="usuario">Usuario</label>
-                                                <input type="text" name="usuario" id="usuario" class="form-control" value="<?= $_SESSION['usuario'] ?>" required="required" disabled="disabled">
+                                                <input type="text" name="usuario" id="usuario" class="form-control" value="<?= $_SESSION['usuario']; ?>" required="required" disabled="disabled">
                                             </div>
                                             <div class="col-12 col-sm-6 col-md-1 col-lg-1">
                                                 <label for="zona">zona</label>
@@ -99,7 +99,7 @@ if (isset($_SESSION['usuario'])) {
         <?php //estableciendo conexion y insertando los datos
         if (isset($_POST['btningresarcliente'])) {
             require_once '../clases/InsertarCliente.php';
-            $ingresarCliente = new InsertarCliente($_POST['id'], $_POST['nombre'], $_POST['apellido'], $_POST['nombrenegocio'], $_POST['ciudad'], $_POST['direccion'], $_POST['barrio'], $_POST['correo'], $_POST['telefono'], $_POST['fechanac'], $_POST['zona'], $_POST['usuario']);
+            $ingresarCliente = new InsertarCliente($_POST['id'], $_POST['nombre'], $_POST['apellido'], $_POST['nombrenegocio'], $_POST['ciudad'], $_POST['direccion'], $_POST['barrio'], $_POST['correo'], $_POST['telefono'], $_POST['fechanac'], $_POST['zona'], $_SESSION['usuario']);
             $ingresarCliente->Insertar();
         }
         ?>
