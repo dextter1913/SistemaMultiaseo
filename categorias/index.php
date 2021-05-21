@@ -20,6 +20,11 @@ if (isset($_SESSION['usuario'])) {
                                     Categorias
                                 </center>
                             </th>
+                            <th>
+                                <center>
+                                    Acciones
+                                </center>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,6 +37,11 @@ if (isset($_SESSION['usuario'])) {
                             <tr>
                                 <td>
                                     <center><?= $rows['nomCategoria']; ?></center>
+                                </td>
+                                <td>
+                                    <center>
+                                        <a href="../PuertaTrasera/ProcesoEliminarCategoria.php?nomcategoria=<?= $rows['nomCategoria']; ?>" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+                                    </center>
                                 </td>
                             </tr>
                         <?php
