@@ -66,7 +66,7 @@ CREATE TABLE zonas(
   );
 CREATE TABLE cliente(
     idCl VARCHAR (20) PRIMARY KEY NOT NULL,
-    nombreCl VARCHAR (50) NOT NULL,
+    nombreCl VARCHAR (50) NULL,
     apellidoCl VARCHAR (50) NULL,
     nombrenegocio VARCHAR (50) NOT NULL,
     ciudadCl VARCHAR (30) NOT NULL,

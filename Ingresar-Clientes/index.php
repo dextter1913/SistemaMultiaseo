@@ -29,7 +29,7 @@ if (isset($_SESSION['usuario'])) {
                                             </div>
                                             <div class="col-12 col-sm-6 col-md-3 col-lg-3">
                                                 <label for="nombre">Nombre</label>
-                                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" required="required">
+                                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre">
                                             </div>
                                             <div class="col-12 col-sm-6 col-md-3 col-lg-3">
                                                 <label for="apellido">Apellido</label>
