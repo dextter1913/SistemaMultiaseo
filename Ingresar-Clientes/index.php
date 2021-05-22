@@ -48,6 +48,7 @@ if (isset($_SESSION['usuario'])) {
                                                 <select id="inputState" class="form-select" name="ciudad" required="required">
                                                     <option selected>Seleccionar</option>
                                                     <option>Bello Antioquia</option>
+                                                    <option>Caldas Antioquia</option>
                                                     <option>Envigado Antioquia</option>
                                                     <option>Itagüí Antioquia</option>
                                                     <option>Medellín Antioquia</option>
