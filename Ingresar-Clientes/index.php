@@ -49,6 +49,7 @@ if (isset($_SESSION['usuario'])) {
                                                     <option selected>Seleccionar</option>
                                                     <option>Bello Antioquia</option>
                                                     <option>Caldas Antioquia</option>
+                                                    <option>Copacabana Antioquia</option>
                                                     <option>Envigado Antioquia</option>
                                                     <option>Itagüí Antioquia</option>
                                                     <option>Medellín Antioquia</option>
