@@ -44,7 +44,7 @@
                     <div class="col-6 col-sm-4 col-md-2">
                         <b>Nuestra compañia</b><br>
                         TecnoFreaky S.A<br>
-                        las mejores soluciones web <br>
+                        soluciones web en la nube<br>
                         Disposicion e Innovacion <br>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2">
