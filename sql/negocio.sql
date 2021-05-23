@@ -22,11 +22,13 @@ VALUES(
     TRUE,
     '2021-05-11',
     '2022-05-14'
-  ),("admin", 
-  "123", 
-  TRUE, 
-  '2021-05-11', 
-  '2022-05-14');
+  ),(
+    "admin",
+    "123",
+    TRUE,
+    '2021-05-11',
+    '2022-05-14'
+  );
 CREATE TABLE empleados(
     idEmp VARCHAR (20) PRIMARY KEY NOT NULL,
     nombreEmp VARCHAR (50) NOT NULL,
@@ -68,14 +70,14 @@ CREATE TABLE cliente(
     idCl VARCHAR (20) PRIMARY KEY NOT NULL,
     nombreCl VARCHAR (50) NULL,
     apellidoCl VARCHAR (50) NULL,
-    nombrenegocio VARCHAR (50) NOT NULL,
-    ciudadCl VARCHAR (30) NOT NULL,
-    direccionCl VARCHAR (50) NOT NULL,
-    barrio VARCHAR (50) NOT NULL,
-    correoCl VARCHAR (50) NOT NULL,
-    telefonoCl VARCHAR (20) NOT NULL,
-    fechanacCl VARCHAR (255) NOT NULL,
-    idzona INTEGER NULL,
+    nombrenegocio VARCHAR (50) NULL,
+    ciudadCl VARCHAR (30) NULL,
+    direccionCl VARCHAR (50) NULL,
+    barrio VARCHAR (50) NULL,
+    correoCl VARCHAR (50) NULL,
+    telefonoCl VARCHAR (50) NULL,
+    fechanacCl VARCHAR (255) NULL,
+    idzona INTEGER NOT NULL,
     index(idzona),
     FOREIGN KEY (idzona) REFERENCES zonas (idzona),
     user VARCHAR (50) NOT NULL,
@@ -157,11 +159,11 @@ CREATE TABLE logs(
     FOREIGN KEY (user) REFERENCES usuarios(user)
   );
   /*SELECT * FROM usuarios WHERE user = 'dextter1913' AND pass = '123' AND super = TRUE AND fechaInicioLicencia = '2021-05-11' AND fechaFinalLicencia <= '2021-05-14';
-  
-  --ON DELETE CASCADE
-  
-  
-  
-  
-  UPDATE usuarios SET fechaInicioLicencia = CURDATE() WHERE user = 'dextter1913';
-  SELECT * FROM usuarios WHERE user = 'dextter1913' AND pass = '123' AND super = TRUE AND fechaInicioLicencia <= fechaFinalLicencia;*/
+            
+            --ON DELETE CASCADE
+            
+            
+            
+            
+            UPDATE usuarios SET fechaInicioLicencia = CURDATE() WHERE user = 'dextter1913';
+            SELECT * FROM usuarios WHERE user = 'dextter1913' AND pass = '123' AND super = TRUE AND fechaInicioLicencia <= fechaFinalLicencia;*/
