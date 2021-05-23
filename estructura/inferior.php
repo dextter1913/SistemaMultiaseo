@@ -8,18 +8,13 @@
         <div class="p-3 mb-2 bg-dark text-white">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-6 col-md-3">
+                    <div class="col-6 col-md-2">
                         <b>
                             Contacto <br>
                         </b>
-                        Medellin:
-                        4-9823456 <br>
-
-                        Bogota:
-                        1-7654980 <br>
-
-                        Cali:
-                        2-6754323 <br>
+                        Celular: <br />
+                        +57 3166857000 <br />
+                        +57 3135779037 <br />
                     </div>
                     <div class="col-6 col-sm-4 col-md-3">
                         <div class="row">
@@ -46,17 +41,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-3">
+                    <div class="col-6 col-sm-4 col-md-2">
                         <b>Nuestra compañia</b><br>
                         TecnoFreaky S.A<br>
                         las mejores soluciones web <br>
                         Disposicion e Innovacion <br>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-3">
+                    <div class="col-6 col-sm-4 col-md-2">
                         <b>Servicio</b><br>
                         Garantia <br>
                         acompañamiento <br>
                         ventas en TecnoFreaky.com <br>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2">
+                        <b>
+                            Email: <br />
+                        </b>
+                        dextter1913@gmail.com <br />
+                        clau32usa@gmail.com <br />
+                        soporte@tecnofreaky.com.co <br />
                     </div>
                 </div>
             </div>
@@ -75,4 +78,5 @@
         </div>
     </div>
 </footer>
+
 </html>
