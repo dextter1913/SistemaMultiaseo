@@ -158,7 +158,7 @@ CREATE TABLE logs(
     index(user),
     FOREIGN KEY (user) REFERENCES usuarios(user)
   );
-/*SELECT * FROM usuarios WHERE user = 'dextter1913' AND pass = '123' AND super = TRUE AND fechaInicioLicencia = '2021-05-11' AND fechaFinalLicencia <= '2021-05-14';                       
---ON DELETE CASCADE
-UPDATE usuarios SET fechaInicioLicencia = CURDATE() WHERE user = 'dextter1913';                          
-SELECT * FROM usuarios WHERE user = 'dextter1913' AND pass = '123' AND super = TRUE AND fechaInicioLicencia <= fechaFinalLicencia;*/
+  /*SELECT * FROM usuarios WHERE user = 'dextter1913' AND pass = '123' AND super = TRUE AND fechaInicioLicencia = '2021-05-11' AND fechaFinalLicencia <= '2021-05-14';                       
+                                            --ON DELETE CASCADE
+                                            UPDATE usuarios SET fechaInicioLicencia = CURDATE() WHERE user = 'dextter1913';                          
+                                            SELECT * FROM usuarios WHERE user = 'dextter1913' AND pass = '123' AND super = TRUE AND fechaInicioLicencia <= fechaFinalLicencia;*/
