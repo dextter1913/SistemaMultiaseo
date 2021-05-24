@@ -154,7 +154,7 @@ if (isset($_SESSION['usuario'])) {
                             <label for="doc">Ingrese Nombre</label>
                         </div>
                         <div class="col-12 col-6 col-sm-5 col-md-5 col-lg-5">
-                            <input type="text" name="doc" id="doc" class="form-control" placeholder="Ingrese Documento">
+                            <input type="text" name="doc" id="doc" class="form-control" placeholder="Ingrese Nombre">
                         </div>
                         <div class="col-12 col-sm-2 col-md-2 col-lg-2"><button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button></div>
                     </div>
