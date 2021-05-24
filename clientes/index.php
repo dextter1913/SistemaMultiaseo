@@ -151,12 +151,12 @@ if (isset($_SESSION['usuario'])) {
                 <form action="../PuertaTrasera/ProcesoBuscarClientePorNombre.php" method="post">
                     <div class="row border">
                         <div class="col-12 col-6 col-sm-5 col-md-5 col-lg-5">
-                            <label for="doc">Ingrese Documento cliente</label>
+                            <label for="doc">Ingrese Nombre</label>
                         </div>
                         <div class="col-12 col-6 col-sm-5 col-md-5 col-lg-5">
                             <input type="text" name="doc" id="doc" class="form-control" placeholder="Ingrese Documento">
                         </div>
-                        <div class="col-12 col-sm-2 col-md-2 col-lg-2"><button class="btn btn-outline-dark" type="submit"><i class="far fa-edit"></i></button></div>
+                        <div class="col-12 col-sm-2 col-md-2 col-lg-2"><button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button></div>
                     </div>
                 </form>
             </div>
