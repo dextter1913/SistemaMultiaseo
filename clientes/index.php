@@ -148,7 +148,7 @@ if (isset($_SESSION['usuario'])) {
                         </p>
                     </div>
                 </div><br />
-                <form action="" method="post">
+                <form action="../PuertaTrasera/ProcesoBuscarClientePorNombre.php" method="post">
                     <div class="row border">
                         <div class="col-12 col-6 col-sm-5 col-md-5 col-lg-5">
                             <label for="doc">Ingrese Documento cliente</label>
