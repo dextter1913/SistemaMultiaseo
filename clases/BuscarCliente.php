@@ -21,7 +21,6 @@ require_once 'Conexion.php';
             return $FacturacionQuery;
 
         }
-
     }
     
 

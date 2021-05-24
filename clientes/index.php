@@ -1,6 +1,8 @@
 <?php
 session_start();
 if (isset($_SESSION['usuario'])) {
+    require_once '../clases/Conexion.php';
+    require_once '../clases/ConsultarClientes.php';
     require_once '../estructura/superior.php';
 ?>
     <div class="container-fluid">
@@ -11,17 +13,24 @@ if (isset($_SESSION['usuario'])) {
             <div class="col-12 col-sm-6 col-md-5 col-lg-5 table-responsive">
                 <div class="container">
                     <div class="row shadow p-3 mb-5 bg-body rounded border">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="./?pg=5">5</a></li>
+                                <li class="page-item"><a class="page-link" href="./?pg=25">25</a></li>
+                                <li class="page-item"><a class="page-link" href="./?pg=50">50</a></li>
+                                <li class="page-item"><a class="page-link" href="./?pg=100">100</a></li>
+                                <li class="page-item"><a class="page-link" href="./?pg=500">500</a></li>
+                                <li class="page-item"><a class="page-link" href="./?pg=5000">todos</a></li>
+                            </ul>
+                        </nav>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
                                     <th>
-                                        <center>Doc</center>
+                                        <center>Ver</center>
                                     </th>
                                     <th>
                                         <center>Nombre</center>
-                                    </th>
-                                    <th>
-                                        <center>Apellido</center>
                                     </th>
                                     <th>
                                         <center>Negocio</center>
@@ -32,58 +41,124 @@ if (isset($_SESSION['usuario'])) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <center></center>
-                                    </td>
-                                    <td>
-                                        <center></center>
-                                    </td>
-                                    <td>
-                                        <center></center>
-                                    </td>
-                                    <td>
-                                        <center></center>
-                                    </td>
-                                    <td>
-                                        <center></center>
-                                    </td>
-                                </tr>
+                                <?php
+                                $conexion = new Conexion();
+                                $consulta = new ConsultarClientes($_GET['pg'], $_GET['nomCl']);
+                                $resultado = mysqli_query($conexion->EstablecerConexion(), $consulta->consultacliente());
+                                while ($row = mysqli_fetch_array($resultado)) :
+                                ?>
+                                    <tr>
+                                        <td>
+                                            <center><a href="../PuertaTrasera/ProcesoMostrarCliente.php?idCl=<?= $row['idCl']; ?>"><button class="btn btn-outline-primary btn-sm"><i class="far fa-eye"></i></button></a></center>
+                                        </td>
+                                        <td>
+                                            <center><?= $row['nombreCl']; ?></center>
+                                        </td>
+                                        <td>
+                                            <center><?= $row['nombrenegocio']; ?></center>
+                                        </td>
+                                        <td>
+                                            <center><a href="../PuertaTrasera/ProcesoEditarCliente.php?idCl=<?= $row['idCl']; ?>"><button class="btn btn-outline-dark btn-sm"><i class="far fa-edit"></i></button></a><a href="../PuertaTrasera/ProcesoEliminarCliente.php?idCl=<?= $row['idCl']; ?>"><button class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button></a></center>
+                                        </td>
+                                    </tr>
+                                <?php
+                                endwhile;
+                                ?>
                             </tbody>
                         </table>
                     </div>
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        </ul>
-                    </nav>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-7 col-lg-7">
-                <div class="container">
-                    <div class="row border">
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-                            <h5><i>Documento</i></h5>
-                            <h5><i>Nombre</i></h5>
-                            <h5><i>Apellido</i></h5>
-                            <h5><i>Negocio</i></h5>
-                            <h5><i>Ciudad</i></h5>
-                            <h5><i>Direccion</i></h5>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-                            <h5><i>Barrio</i></h5>
-                            <h5><i>Correo</i></h5>
-                            <h5><i>Telefono</i></h5>
-                            <h5><i>Fecha</i></h5>
-                            <h5><i>Cod Zona</i></h5>
-                            <h5><i>Usuario</i></h5>
-                        </div>
+                <div class="row border">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                        <p class="text-start">
+                            <i>Documento:</i>
+                            <b class="text-danger">
+                                <i><?= $_GET['doc'] ?></i>
+                            </b>
+                        </p>
+                        <p class="text-start">
+                            <i>Nombre:</i>
+                            <b class="text-danger">
+                                <i><?= $_GET['nombre'] ?></i>
+                            </b>
+                        </p>
+                        <p class="text-start">
+                            <i>Apellido:</i>
+                            <b class="text-danger">
+                                <i><?= $_GET['apellido'] ?></i>
+                            </b>
+                        </p>
+                        <p class="text-start">
+                            <i>Negocio:</i>
+                            <b>
+                                <i class="text-danger"><?= $_GET['negocio'] ?></i>
+                            </b>
+                        </p>
+                        <p class="text-start">
+                            <i>Ciudad:</i>
+                            <b>
+                                <i class="text-danger"><?= $_GET['ciudad'] ?></i>
+                            </b>
+                        </p>
+                        <p class="text-start">
+                            <i>Direccion:</i>
+                            <b>
+                                <i class="text-danger"><?= $_GET['direccion'] ?></i>
+                            </b>
+                        </p>
                     </div>
-                </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                        <p class="text-start">
+                            <i>Barrio:</i>
+                            <b>
+                                <i class="text-danger"><?= $_GET['barrio'] ?></i>
+                            </b>
+                        </p>
+                        <p class="text-start">
+                            <i>Correo</i>
+                            <b>
+                                <i class="text-danger"><?= $_GET['correo'] ?></i>
+                            </b>
+                        </p>
+                        <p class="text-start">
+                            <i>Telefono</i>
+                            <b>
+                                <i class="text-danger"><?= $_GET['telefono'] ?></i>
+                            </b>
+                        </p>
+                        <p class="text-start">
+                            <i>Fecha</i>
+                            <b>
+                                <i class="text-danger"><?= $_GET['fecha'] ?></i>
+                            </b>
+                        </p>
+                        <p class="text-start">
+                            <i>Cod Zona</i>
+                            <b>
+                                <i class="text-danger"><?= $_GET['zona'] ?></i>
+                            </b>
+                        </p>
+                        <p class="text-start">
+                            <i>Usuario</i>
+                            <b>
+                                <i class="text-primary"><?= $_GET['user'] ?></i>
+                            </b>
+                        </p>
+                    </div>
+                </div><br />
+                <form action="" method="post">
+                    <div class="row border">
+                        <div class="col-12 col-6 col-sm-5 col-md-5 col-lg-5">
+                            <label for="doc">Ingrese Documento cliente</label>
+                        </div>
+                        <div class="col-12 col-6 col-sm-5 col-md-5 col-lg-5">
+                            <input type="text" name="doc" id="doc" class="form-control" placeholder="Ingrese Documento">
+                        </div>
+                        <div class="col-12 col-sm-2 col-md-2 col-lg-2"><button class="btn btn-outline-dark" type="submit"><i class="far fa-edit"></i></button></div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
