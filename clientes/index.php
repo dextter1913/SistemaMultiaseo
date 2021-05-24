@@ -10,7 +10,7 @@ if (isset($_SESSION['usuario'])) {
             <center>
                 <h1><i>Consultar y Modificar Clientes</i></h1>
             </center>
-            <div class="col-12 col-sm-6 col-md-5 col-lg-5 table-responsive">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 table-responsive">
                 <div class="container">
                     <div class="row shadow p-3 mb-5 bg-body rounded border">
                         <nav aria-label="Page navigation example">
@@ -69,7 +69,7 @@ if (isset($_SESSION['usuario'])) {
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-7 col-lg-7">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="row border">
                     <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                         <p class="text-start">
@@ -156,7 +156,7 @@ if (isset($_SESSION['usuario'])) {
                         <div class="col-12 col-6 col-sm-5 col-md-5 col-lg-5">
                             <input type="text" name="doc" id="doc" class="form-control" placeholder="Ingrese Documento">
                         </div>
-                        <div class="col-12 col-sm-2 col-md-2 col-lg-2"><button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button></div>
+                        <div class="col-12 col-sm-2 col-md-2 col-lg-2"><button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i6</button></div>
                     </div>
                 </form>
             </div>
