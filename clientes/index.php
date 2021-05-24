@@ -15,12 +15,12 @@ if (isset($_SESSION['usuario'])) {
                     <div class="row shadow p-3 mb-5 bg-body rounded border">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="./?pg=5">5</a></li>
-                                <li class="page-item"><a class="page-link" href="./?pg=25">25</a></li>
-                                <li class="page-item"><a class="page-link" href="./?pg=50">50</a></li>
-                                <li class="page-item"><a class="page-link" href="./?pg=100">100</a></li>
-                                <li class="page-item"><a class="page-link" href="./?pg=500">500</a></li>
-                                <li class="page-item"><a class="page-link" href="./?pg=5000">todos</a></li>
+                                <li class="page-item"><a class="page-link" href="./?pg=5&nomCl=<?= $_GET['nomCl']; ?>">5</a></li>
+                                <li class="page-item"><a class="page-link" href="./?pg=25&nomCl=<?= $_GET['nomCl']; ?>">25</a></li>
+                                <li class="page-item"><a class="page-link" href="./?pg=50&nomCl=<?= $_GET['nomCl']; ?>">50</a></li>
+                                <li class="page-item"><a class="page-link" href="./?pg=100&nomCl=<?= $_GET['nomCl']; ?>">100</a></li>
+                                <li class="page-item"><a class="page-link" href="./?pg=500&nomCl=<?= $_GET['nomCl']; ?>">500</a></li>
+                                <li class="page-item"><a class="page-link" href="./?pg=5000&nomCl=<?= $_GET['nomCl']; ?>">todos</a></li>
                             </ul>
                         </nav>
                         <table class="table table-hover">
