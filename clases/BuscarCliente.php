@@ -9,7 +9,7 @@ require_once 'Conexion.php';
 
         }
         public function ConsultaTabla(){ // Metodo que consulta el query
-            $consulta = "SELECT * FROM cliente WHERE idCl = '$this->_id' OR nombreCl like '%$this->_id%'";
+            $consulta = "SELECT * FROM cliente WHERE idCl = '$this->_id' OR nombreCl like '%$this->_id%' OR apellidoCl like '%$this->_id%' OR nombrenegocio LIKE '%$this->_id%'";
             return $consulta;
         }
 

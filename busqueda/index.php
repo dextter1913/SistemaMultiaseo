@@ -38,12 +38,6 @@ if (isset($_SESSION['usuario'])) {
                                         <center> Telefono</center>
                                     </th>
                                     <th scope="col">
-                                        <center> Fecha Nacimiento</center>
-                                    </th>
-                                    <th scope="col">
-                                        <center> Usuario</center>
-                                    </th>
-                                    <th scope="col">
                                         <center> Acciones</center>
                                     </th>
                                 </tr>
@@ -80,12 +74,6 @@ if (isset($_SESSION['usuario'])) {
                                         </td>
                                         <td>
                                             <center><?php echo $row['telefonoCl']; ?></center>
-                                        </td>
-                                        <td>
-                                            <center><?php echo $row['fechanacCl']; ?></center>
-                                        </td>
-                                        <td>
-                                            <center><?php echo $row['user']; ?></center>
                                         </td>
                                         <td>
                                             <center>
