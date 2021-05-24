@@ -58,7 +58,7 @@ if (isset($_SESSION['usuario'])) {
                                             <center><?= $row['nombrenegocio']; ?></center>
                                         </td>
                                         <td>
-                                            <center><a href="../PuertaTrasera/ProcesoEditarCliente.php?idCl=<?= $row['idCl']; ?>"><button class="btn btn-outline-dark btn-sm"><i class="far fa-edit"></i></button></a><a href="../PuertaTrasera/ProcesoEliminarCliente.php?idCl=<?= $row['idCl']; ?>"><button class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button></a></center>
+                                            <center><a href="ActualizacionDatosCliente/?idCl=<?= $row['idCl']; ?>"><button class="btn btn-outline-dark btn-sm"><i class="far fa-edit"></i></button></a><a href="../PuertaTrasera/ProcesoEliminarCliente.php?idCl=<?= $row['idCl']; ?>"><button class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button></a></center>
                                         </td>
                                     </tr>
                                 <?php
