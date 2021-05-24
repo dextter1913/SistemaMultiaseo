@@ -12,7 +12,7 @@ if (isset($_SESSION['usuario'])) {
         require_once '../../clases/Conexion.php';
         $busqueda = new BuscarCliente($_GET['idCl']);
         $conexion = new Conexion();
-        $resultado = mysqli_query($conexion->EstablecerConexion(), $busqueda->ConsultaTabla());
+        $resultado = mysqli_query($conexion->EstablecerConexion(), $busqueda->ConsultarClienteAActualizar());
         while ($row = mysqli_fetch_array($resultado)) :
         ?>
             <form action="../../PuertaTrasera/ProcesoActualizarCliente.php?idCl=<?= $row['idCl']; ?>" method="post">
