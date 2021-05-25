@@ -10,65 +10,61 @@ if (isset($_SESSION['usuario'])) {
             <center>
                 <h1><i>Consultar y Modificar Clientes</i></h1>
             </center>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-6 table-responsive">
-                <div class="container">
-                    <div class="row shadow p-3 mb-5 bg-body rounded border">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="./?pg=5&nomCl=<?= $_GET['nomCl']; ?>">5</a></li>
-                                <li class="page-item"><a class="page-link" href="./?pg=25&nomCl=<?= $_GET['nomCl']; ?>">25</a></li>
-                                <li class="page-item"><a class="page-link" href="./?pg=50&nomCl=<?= $_GET['nomCl']; ?>">50</a></li>
-                                <li class="page-item"><a class="page-link" href="./?pg=100&nomCl=<?= $_GET['nomCl']; ?>">100</a></li>
-                                <li class="page-item"><a class="page-link" href="./?pg=500&nomCl=<?= $_GET['nomCl']; ?>">500</a></li>
-                                <li class="page-item"><a class="page-link" href="./?pg=5000&nomCl=<?= $_GET['nomCl']; ?>">todos</a></li>
-                            </ul>
-                        </nav>
-                        <table class="table table-hover">
-                            <thead>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 table-responsive shadow p-3 mb-5 bg-body rounded border">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="./?pg=5&nomCl=<?= $_GET['nomCl']; ?>">5</a></li>
+                            <li class="page-item"><a class="page-link" href="./?pg=25&nomCl=<?= $_GET['nomCl']; ?>">25</a></li>
+                            <li class="page-item"><a class="page-link" href="./?pg=50&nomCl=<?= $_GET['nomCl']; ?>">50</a></li>
+                            <li class="page-item"><a class="page-link" href="./?pg=100&nomCl=<?= $_GET['nomCl']; ?>">100</a></li>
+                            <li class="page-item"><a class="page-link" href="./?pg=500&nomCl=<?= $_GET['nomCl']; ?>">500</a></li>
+                            <li class="page-item"><a class="page-link" href="./?pg=5000&nomCl=<?= $_GET['nomCl']; ?>">todos</a></li>
+                        </ul>
+                    </nav>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <center>Ver</center>
+                                </th>
+                                <th>
+                                    <center>Nombre</center>
+                                </th>
+                                <th>
+                                    <center>Negocio</center>
+                                </th>
+                                <th>
+                                    <center>Accion</center>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $conexion = new Conexion();
+                            $consulta = new ConsultarClientes($_GET['pg'], $_GET['nomCl']);
+                            $resultado = mysqli_query($conexion->EstablecerConexion(), $consulta->consultacliente());
+                            while ($row = mysqli_fetch_array($resultado)) :
+                            ?>
                                 <tr>
-                                    <th>
-                                        <center>Ver</center>
-                                    </th>
-                                    <th>
-                                        <center>Nombre</center>
-                                    </th>
-                                    <th>
-                                        <center>Negocio</center>
-                                    </th>
-                                    <th>
-                                        <center>Accion</center>
-                                    </th>
+                                    <td>
+                                        <center><a href="../PuertaTrasera/ProcesoMostrarCliente.php?idCl=<?= $row['idCl']; ?>"><button class="btn btn-outline-primary btn-sm"><i class="far fa-eye"></i></button></a></center>
+                                    </td>
+                                    <td>
+                                        <center><?= $row['nombreCl']; ?></center>
+                                    </td>
+                                    <td>
+                                        <center><?= $row['nombrenegocio']; ?></center>
+                                    </td>
+                                    <td>
+                                        <center><a href="ActualizacionDatosCliente/?idCl=<?= $row['idCl']; ?>"><button class="btn btn-outline-dark btn-sm"><i class="far fa-edit"></i></button></a><a href="../PuertaTrasera/ProcesoEliminarCliente.php?idCl=<?= $row['idCl']; ?>"><button class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button></a></center>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $conexion = new Conexion();
-                                $consulta = new ConsultarClientes($_GET['pg'], $_GET['nomCl']);
-                                $resultado = mysqli_query($conexion->EstablecerConexion(), $consulta->consultacliente());
-                                while ($row = mysqli_fetch_array($resultado)) :
-                                ?>
-                                    <tr>
-                                        <td>
-                                            <center><a href="../PuertaTrasera/ProcesoMostrarCliente.php?idCl=<?= $row['idCl']; ?>"><button class="btn btn-outline-primary btn-sm"><i class="far fa-eye"></i></button></a></center>
-                                        </td>
-                                        <td>
-                                            <center><?= $row['nombreCl']; ?></center>
-                                        </td>
-                                        <td>
-                                            <center><?= $row['nombrenegocio']; ?></center>
-                                        </td>
-                                        <td>
-                                            <center><a href="ActualizacionDatosCliente/?idCl=<?= $row['idCl']; ?>"><button class="btn btn-outline-dark btn-sm"><i class="far fa-edit"></i></button></a><a href="../PuertaTrasera/ProcesoEliminarCliente.php?idCl=<?= $row['idCl']; ?>"><button class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button></a></center>
-                                        </td>
-                                    </tr>
-                                <?php
-                                endwhile;
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
+                            <?php
+                            endwhile;
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
             <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="row border">
                     <div class="col-12 col-sm-6 col-md-6 col-lg-6">
