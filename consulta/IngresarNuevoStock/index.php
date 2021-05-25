@@ -176,7 +176,7 @@ if (isset($_SESSION['usuario'])) {
         print $_SESSION['Mensaje'];
         unset($_SESSION['Mensaje']);
     }
-    require_once '../../estructura/inferior.php';
+    require_once '../../estructura/inferiorsubcarpetas.php';
 } else {
     header('Location:../');
 } ?>

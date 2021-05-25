@@ -16,7 +16,8 @@ require_once '../../estructura/menu2.php';
         <div class="col-12 col-sm-4 col-md-4 col-lg-4"></div>
     </div>
 </div>
-<?php require_once '../../estructura/inferior.php'; 
+<?php 
+    require_once '../../estructura/inferiorsubcarpetas.php';
 }else {
     header('Location:../../');
 }

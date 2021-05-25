@@ -89,7 +89,7 @@ require_once '../../clases/Conexion.php';
     </div>
 </div>
 <?php
-include("../../estructura/inferior.php");
+    require_once '../../estructura/inferiorsubcarpetas.php';
 }else {
     header('Location:../../');
 }

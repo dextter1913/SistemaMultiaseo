@@ -54,7 +54,7 @@ if (isset($_SESSION['usuario'])) {
     </div>
 
 <?php
-    include("../../estructura/inferior.php");
+    require_once '../../estructura/inferiorsubcarpetas.php';
 } else {
     header('Location:../../');
 }
