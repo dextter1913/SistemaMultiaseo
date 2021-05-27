@@ -1,6 +1,6 @@
-DROP DATABASE if EXISTS AtlazMultiaseo;
-CREATE DATABASE AtlazMultiaseo;
-USE AtlazMultiaseo;
+DROP DATABASE if EXISTS Demo;
+CREATE DATABASE Demo;
+USE Demo;
 CREATE TABLE usuarios(
   user VARCHAR (50) PRIMARY KEY NOt NULL,
   pass VARCHAR (50) NOT NULL,
@@ -61,13 +61,22 @@ VALUES(
     "clau32usa@gmail.com",
     '1994-07-16',
     "dextter1913"
+  ),(
+    "159753456258",
+    "Developer",
+    "Atlaz",
+    "3166857000",
+    "cra 33 47 35 int 172",
+    "clau32usa@gmail.com",
+    '1994-07-16',
+    "admin"
   );
 CREATE TABLE zonas(
     idzona INTEGER AUTO_INCREMENT PRIMARY KEY,
     nombrezona VARCHAR (60) NOT NULL
   );
 CREATE TABLE cliente(
-    idCl VARCHAR (20) PRIMARY KEY NOT NULL,
+    idCl INT(50) PRIMARY KEY NOT NULL,
     nombreCl VARCHAR (50) NULL,
     apellidoCl VARCHAR (50) NULL,
     nombrenegocio VARCHAR (50) NULL,
@@ -119,7 +128,7 @@ CREATE TABLE venta(
     cantidad INTEGER (10) NOT NULL,
     totalV FLOAT (25) NOT NULL,
     Estadoventa VARCHAR (25) NULL,
-    cliente VARCHAR (20) NOT NULL,
+    cliente INT(50) NOT NULL,
     producto INTEGER (20) NOT NULL,
     Factura INTEGER (25) NULL,
     index(cliente),
@@ -166,6 +175,10 @@ SELECT * FROM usuarios WHERE user = 'dextter1913' AND pass = '123' AND super = T
 
 ///////////////////////////////////////////////////////////////////
 Query para eliminar constraing y modificar para poder habilitar el delete o el update en cascada
+mostrar constrain name
+
+SHOW CREATE TABLE cliente;
+
 ALTER TABLE cliente DROP CONSTRAINT cliente_ibfk_2;
 ALTER TABLE cliente DROP CONSTRAINT cliente_ibfk_1;
 
