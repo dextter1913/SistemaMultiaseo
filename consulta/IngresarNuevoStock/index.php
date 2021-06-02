@@ -72,8 +72,7 @@ if (isset($_SESSION['usuario'])) {
                             ?>
                                 <tr>
                                     <th>
-                                        <center><input type="checkbox" name="id[]" value="<?= $rows['idProd']; ?>" type="checkbox" class="btn-check" id="btn-check">
-                                        <label class="btn btn-outline-success btn-sm" for="btn-check"><i class="far fa-check-circle"></i></label></center>
+                                        <center><input type="checkbox" name="id[]" value="<?= $rows['idProd']; ?>" class="btn-check-input">
                                     </th>
                                     <th>
                                         <center>
