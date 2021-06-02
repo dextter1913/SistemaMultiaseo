@@ -1,6 +1,6 @@
-DROP DATABASE if EXISTS Demo;
-CREATE DATABASE Demo;
-USE Demo;
+DROP DATABASE if EXISTS Backup;
+CREATE DATABASE Backup;
+USE Backup;
 CREATE TABLE usuarios(
   user VARCHAR (50) PRIMARY KEY NOt NULL,
   pass VARCHAR (50) NOT NULL,
@@ -76,7 +76,7 @@ CREATE TABLE zonas(
     nombrezona VARCHAR (60) NOT NULL
   );
 CREATE TABLE cliente(
-    idCl INT(50) PRIMARY KEY NOT NULL,
+    idCl VARCHAR (20) PRIMARY KEY NOT NULL,
     nombreCl VARCHAR (50) NULL,
     apellidoCl VARCHAR (50) NULL,
     nombrenegocio VARCHAR (50) NULL,
@@ -128,7 +128,7 @@ CREATE TABLE venta(
     cantidad INTEGER (10) NOT NULL,
     totalV FLOAT (25) NOT NULL,
     Estadoventa VARCHAR (25) NULL,
-    cliente INT(50) NOT NULL,
+    cliente VARCHAR (20) NOT NULL,
     producto INTEGER (20) NOT NULL,
     Factura INTEGER (25) NULL,
     index(cliente),
@@ -175,10 +175,6 @@ SELECT * FROM usuarios WHERE user = 'dextter1913' AND pass = '123' AND super = T
 
 ///////////////////////////////////////////////////////////////////
 Query para eliminar constraing y modificar para poder habilitar el delete o el update en cascada
-mostrar constrain name
-
-SHOW CREATE TABLE cliente;
-
 ALTER TABLE cliente DROP CONSTRAINT cliente_ibfk_2;
 ALTER TABLE cliente DROP CONSTRAINT cliente_ibfk_1;
 
@@ -189,6 +185,3 @@ ALTER TABLE cliente
   ON DELETE CASCADE;
 
 */
-
-
-

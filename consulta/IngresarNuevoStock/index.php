@@ -72,7 +72,7 @@ if (isset($_SESSION['usuario'])) {
                             ?>
                                 <tr>
                                     <th>
-                                        <center><input type="checkbox" name="id[]" value="<?= $rows['idProd']; ?>" class="btn-check-input">
+                                        <center><input type="checkbox" name="id[]" value="<?= $rows['idProd']; ?>" class="form-check-input"></center>
                                     </th>
                                     <th>
                                         <center>
