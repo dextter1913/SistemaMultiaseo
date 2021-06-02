@@ -2,7 +2,7 @@
     class ConsultarTotales  
     {
         public function ConsultaSinCuadre(){
-            $query = "SELECT * FROM totales WHERE estado = 'Pendiente de Cuadre' ORDER BY fechatotal DESC LIMIT 5";
+            $query = "SELECT * FROM totales WHERE estado = 'Pendiente de Cuadre'";
             return $query;
             
         }
