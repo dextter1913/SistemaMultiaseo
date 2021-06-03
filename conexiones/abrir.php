@@ -2,7 +2,7 @@
 $host = "atlazdb.cvcpedzqpzzg.us-east-2.rds.amazonaws.com";
 $user = "admin";
 $pass = "Clau32290398";
-$db = "Demo";
+$db = "AtlazMultiaseo";
 $tbcliente = "cliente";
 $tbempleado = "empleados";
 $tbusuarios = "usuarios";
