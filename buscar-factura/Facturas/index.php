@@ -80,8 +80,7 @@ if (isset($_SESSION['usuario'])) {
                                                 <center><?php echo $rows['Estadoventa']; ?></center>
                                             </td>
                                             <td>
-                                                <center><input type="checkbox" name="IdVenta[]" value="<?php echo $rows['idventa']; ?>" type="checkbox" class="btn-check" id="btn-check">
-                                                    <label class="btn btn-outline-success btn-sm" for="btn-check"><i class="far fa-check-circle"></i></label>
+                                                <center><input type="checkbox" name="IdVenta[]" value="<?php echo $rows['idventa']; ?>" class="form-check-input">
                                                 </center>
                                             </td>
                                         </tr>
