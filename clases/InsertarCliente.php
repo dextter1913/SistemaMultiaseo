@@ -39,12 +39,8 @@ class InsertarCliente extends Persona
         $_zona = $this->_zona;
         $_usuario = $this->_usuario;
         $conexion = new Conexion();
-        try {
-            $conexion->EstablecerConexion()->query("INSERT INTO cliente(idCl, nombreCl, apellidoCl, nombrenegocio, ciudadCl, direccionCl, barrio, correoCl, telefonoCl, fechanacCl, idzona, user) 
-            VALUES('$_id','$_nombre','$_apellido','$_nombrenegocio','$_ciudad','$_direccion','$_barrio','$_correo','$_telefono','$_fechanac','$_zona','$_usuario')");
-            print '<center>Cliente Agregado Correctamente</center>';
-        } catch (\Throwable $e) {
-            echo "No se pudo ingresar al cliente $e";
-        }
+        $conexion->EstablecerConexion()->query("INSERT INTO cliente(idCl, nombreCl, apellidoCl, nombrenegocio, ciudadCl, direccionCl, barrio, correoCl, telefonoCl, fechanacCl, idzona, user) 
+        VALUES('$_id','$_nombre','$_apellido','$_nombrenegocio','$_ciudad','$_direccion','$_barrio','$_correo','$_telefono','$_fechanac','$_zona','$_usuario')");
+        print '<center>Cliente Agregado Correctamente</center>';
     }
 }
