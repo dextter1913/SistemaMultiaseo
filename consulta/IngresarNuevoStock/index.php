@@ -61,6 +61,11 @@ if (isset($_SESSION['usuario'])) {
                                         Usuario
                                     </center>
                                 </th>
+                                <th>
+                                    <center>
+                                        Acciones
+                                    </center>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -112,6 +117,11 @@ if (isset($_SESSION['usuario'])) {
                                     <td>
                                         <center>
                                             <?= $rows['user']; ?>
+                                        </center>
+                                    </td>
+                                    <td>
+                                        <center>
+                                            <a href="../EditarProducto?id=<?= $rows['idProd']; ?>">enviar</a>
                                         </center>
                                     </td>
                                 </tr>
