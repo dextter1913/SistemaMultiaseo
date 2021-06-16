@@ -12,7 +12,8 @@ $rows = mysqli_fetch_assoc($consulta);
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm-6 col-md-4 col-lg-4"></div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4 border shadow p-3 mb-5 bg-body rounded">
+        <center><h1><i>Modificar Productos</i></h1></center>
             <form action="../../PuertaTrasera/ProcesoActualizarInformacionProducto.php" method="post">
             <label for="NombreProducto">Nombre Producto</label>
             <input type="text" name="NombreProducto" id="NombreProducto" class="form-control" value="<?= $rows['nomProd'] ?>">
@@ -20,8 +21,8 @@ $rows = mysqli_fetch_assoc($consulta);
             <input type="text" name="NombreProducto" id="NombreProducto" class="form-control" value="<?= $rows['precioProd'] ?>">
             <label for="NombreProducto">Precio Venta</label>
             <input type="text" name="NombreProducto" id="NombreProducto" class="form-control" value="<?= $rows['precioVenta'] ?>">
-            <label for="NombreProducto">Nombre Producto</label>
-            <textarea name="NombreProducto" id="NombreProducto" class="form-control"><?= $rows['descripcionProd'] ?></textarea><br>
+            <label for="DescripcionProducto">Descripcion</label>
+            <textarea name="DescripcionProducto" id="DescripcionProducto" class="form-control"><?= $rows['descripcionProd'] ?></textarea><br>
             <input type="submit" value="Guardar" class="btn btn-outline-success btn-sm">
             </form>
         </div>
