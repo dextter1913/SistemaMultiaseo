@@ -121,7 +121,7 @@ if (isset($_SESSION['usuario'])) {
                                     </td>
                                     <td>
                                         <center>
-                                            <a href="../EditarProducto?id=<?= $rows['idProd']; ?>">enviar</a>
+                                            <a href="../EditarProducto?id=<?= $rows['idProd']; ?>" class="btn btn-outline-primary btn-sm"><i class="far fa-edit"></i></a>
                                         </center>
                                     </td>
                                 </tr>
