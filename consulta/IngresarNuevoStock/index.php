@@ -13,7 +13,7 @@ if (isset($_SESSION['usuario'])) {
             <div class="col-12 col-sm-1 col-md-1 col-lg-1"></div>
             <div class="col-12 col-sm-10 col-md-10 col-lg-10 table-responsive">
                 <form action="../../PuertaTrasera/ProcesoActualizarNuevoStock.php" method="post">
-                    <table class="table table-hover">
+                    <table class="table table-sm table-hover">
                         <thead>
                             <tr>
                                 <th>
